@@ -210,6 +210,51 @@ Section Cross References
     stm32f4xx_hal_msp.o(i.HAL_I2C_MspDeInit) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
     stm32f4xx_hal_msp.o(i.HAL_I2C_MspInit) refers to memseta.o(.text) for __aeabi_memclr4
     stm32f4xx_hal_msp.o(i.HAL_I2C_MspInit) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
+    double_screen.o(i._ZN13Double_screenC1EP19__I2C_HandleTypeDefS1_a) refers to new.o(i._Znwj) for operator new(unsigned)
+    double_screen.o(i._ZN13Double_screenC1EP19__I2C_HandleTypeDefS1_a) refers to adafruit_ssd1306.o(i._ZN16Adafruit_SSD1306C1EP19__I2C_HandleTypeDefa) for Adafruit_SSD1306::Adafruit_SSD1306(__I2C_HandleTypeDef*, signed char)
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screenC1EP19__I2C_HandleTypeDefS1_a) for i._ZN13Double_screenC1EP19__I2C_HandleTypeDefS1_a
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen9drawPixelEsst) for i._ZN13Double_screen9drawPixelEsst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen8drawLineEsssst) for i._ZN13Double_screen8drawLineEsssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen13drawFastVLineEssst) for i._ZN13Double_screen13drawFastVLineEssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen13drawFastHLineEssst) for i._ZN13Double_screen13drawFastHLineEssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen8drawRectEsssst) for i._ZN13Double_screen8drawRectEsssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen8fillRectEsssst) for i._ZN13Double_screen8fillRectEsssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen10fillScreenEt) for i._ZN13Double_screen10fillScreenEt
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen10drawCircleEssst) for i._ZN13Double_screen10drawCircleEssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen16drawCircleHelperEsssht) for i._ZN13Double_screen16drawCircleHelperEsssht
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen10fillCircleEssst) for i._ZN13Double_screen10fillCircleEssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen16fillCircleHelperEssshst) for i._ZN13Double_screen16fillCircleHelperEssshst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen12drawTriangleEsssssst) for i._ZN13Double_screen12drawTriangleEsssssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen12fillTriangleEsssssst) for i._ZN13Double_screen12fillTriangleEsssssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen13drawRoundRectEssssst) for i._ZN13Double_screen13drawRoundRectEssssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen13fillRoundRectEssssst) for i._ZN13Double_screen13fillRoundRectEssssst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen10drawBitmapEssPKhsst) for i._ZN13Double_screen10drawBitmapEssPKhsst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen10drawBitmapEssPKhsstt) for i._ZN13Double_screen10drawBitmapEssPKhsstt
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen11drawXBitmapEssPKhsst) for i._ZN13Double_screen11drawXBitmapEssPKhsst
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen8drawCharEsshtth) for i._ZN13Double_screen8drawCharEsshtth
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen9setCursorEss) for i._ZN13Double_screen9setCursorEss
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen12setTextColorEt) for i._ZN13Double_screen12setTextColorEt
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen12setTextColorEtt) for i._ZN13Double_screen12setTextColorEtt
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen11setTextSizeEh) for i._ZN13Double_screen11setTextSizeEh
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen11setTextWrapEb) for i._ZN13Double_screen11setTextWrapEb
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen11setRotationEh) for i._ZN13Double_screen11setRotationEh
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen5writeEh) for i._ZN13Double_screen5writeEh
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZNK13Double_screen6heightEv) for i._ZNK13Double_screen6heightEv
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZNK13Double_screen5widthEv) for i._ZNK13Double_screen5widthEv
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZNK13Double_screen11getRotationEv) for i._ZNK13Double_screen11getRotationEv
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen5beginEhhb) for i._ZN13Double_screen5beginEhhb
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen12clearDisplayEv) for i._ZN13Double_screen12clearDisplayEv
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen13invertDisplayEh) for i._ZN13Double_screen13invertDisplayEh
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen7displayEv) for i._ZN13Double_screen7displayEv
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen16startscrollrightEhh) for i._ZN13Double_screen16startscrollrightEhh
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen15startscrollleftEhh) for i._ZN13Double_screen15startscrollleftEhh
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen20startscrolldiagrightEhh) for i._ZN13Double_screen20startscrolldiagrightEhh
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen19startscrolldiagleftEhh) for i._ZN13Double_screen19startscrolldiagleftEhh
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen10stopscrollEv) for i._ZN13Double_screen10stopscrollEv
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen3dimEb) for i._ZN13Double_screen3dimEb
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen6printfEPKc) for i._ZN13Double_screen6printfEPKc
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen12fastSPIwriteEh) for i._ZN13Double_screen12fastSPIwriteEh
+    double_screen.o(.ARM.exidx) refers to double_screen.o(i._ZN13Double_screen6memsetEPhtt) for i._ZN13Double_screen6memsetEPhtt
     stm32f4xx_hal_i2c.o(i.HAL_I2C_DeInit) refers to stm32f4xx_hal_msp.o(i.HAL_I2C_MspDeInit) for HAL_I2C_MspDeInit
     stm32f4xx_hal_i2c.o(i.HAL_I2C_ER_IRQHandler) refers to stm32f4xx_hal_i2c.o(i.I2C_Slave_AF) for I2C_Slave_AF
     stm32f4xx_hal_i2c.o(i.HAL_I2C_ER_IRQHandler) refers to stm32f4xx_hal_i2c.o(i.I2C_ITError) for I2C_ITError
@@ -446,6 +491,14 @@ Section Cross References
     stm32f4xx_hal.o(i.HAL_SetTickFreq) refers to stm32f4xx_hal.o(.data) for .data
     system_stm32f4xx.o(i.SystemCoreClockUpdate) refers to system_stm32f4xx.o(.data) for .data
     system_stm32f4xx.o(i.SystemCoreClockUpdate) refers to system_stm32f4xx.o(.constdata) for .constdata
+    new.o(i._Znwj) refers to cpp_memory.o(.text) for __rt_new_handler_addr
+    new.o(i._Znwj) refers to malloc.o(i.malloc) for malloc
+    new.o(i._Znwj) refers to arm_newhandler_noexceptions.o(.text) for __default_new_handler()
+    new.o(.ARM.exidx) refers to new.o(i._Znwj) for i._Znwj
+    new.o(.ARM.exidx) refers to unwind_pr0.o(.text) for __aeabi_unwind_cpp_pr0
+    new.o(.ARM.exidx) refers to new.o(.ARM.extab) for .extab._Znwj
+    new.o(.ARM.extab) refers to arm_callunex_noexceptions.o(.text) for __cxa_call_unexpected
+    new.o(.ARM.extab) refers to bad_alloc_dtor.o(.constdata__ZTISt9bad_alloc) for typeinfo for std::bad_alloc
     pure_virt.o(i.__cxa_pure_virtual) refers to cpp_signal.o(.text) for __rt_SIGPVFN
     pure_virt.o(.ARM.exidx) refers to pure_virt.o(i.__cxa_pure_virtual) for i.__cxa_pure_virtual
     lib_rtti_impl.o(i._ZN10__cxxabiv116__enum_type_infoD0Ev) refers to lib_rtti_impl.o(i._ZN10__cxxabiv116__enum_type_infoD1Ev) for __cxxabiv1::__enum_type_info::~__enum_type_info()
@@ -497,12 +550,21 @@ Section Cross References
     cpp_init.o(.init_array) refers to cpp_init.o(.text) for __cpp_initialize__aeabi_
     cpp_init.o(.dummy_text) refers (Special) to entry8a.o(.ARM.Collect$$$$00000009) for _main_cpp_init$empty
     cpp_init.o(.text) refers (Special) to entry8a.o(.ARM.Collect$$$$00000009) for _main_cpp_init$empty
+    arm_callunex_noexceptions.o(.ARM.exidx) refers to arm_callunex_noexceptions.o(.text) for .text
+    arm_newhandler_noexceptions.o(.text) refers to arm_exceptions_terminate.o(.text) for std::terminate()
+    arm_newhandler_noexceptions.o(.ARM.exidx) refers to arm_newhandler_noexceptions.o(.text) for .text
+    bad_alloc_dtor.o(i._ZNSt9bad_allocD0Ev) refers to bad_alloc_dtor.o(i._ZNSt9bad_allocD1Ev) for std::bad_alloc::~bad_alloc()
+    bad_alloc_dtor.o(i._ZNSt9bad_allocD0Ev) refers to delete.o(i._ZdlPv) for operator delete (void*)
+    bad_alloc_dtor.o(.ARM.exidx) refers to bad_alloc_dtor.o(i._ZNSt9bad_allocD1Ev) for i._ZNSt9bad_allocD1Ev
+    bad_alloc_dtor.o(.ARM.exidx) refers to bad_alloc_dtor.o(i._ZNSt9bad_allocD0Ev) for i._ZNSt9bad_allocD0Ev
     type_info_dtor.o(.ARM.exidx) refers to type_info_dtor.o(i._ZNSt9type_infoD1Ev) for i._ZNSt9type_infoD1Ev
     type_info_dtor.o(.ARM.exidx) refers to type_info_dtor.o(i._ZNSt9type_infoD0Ev) for i._ZNSt9type_infoD0Ev
     arm_exceptions_callterm.o(.text) refers to arm_exceptions_globs.o(.text) for __cxa_get_globals
     arm_exceptions_callterm.o(.text) refers to arm_exceptions_support.o(.text) for __ARM::is_foreign_exception(_Unwind_Control_Block*)
     arm_exceptions_callterm.o(.text) refers to arm_exceptions_terminate.o(.text) for std::terminate()
     arm_exceptions_callterm.o(.ARM.exidx) refers to arm_exceptions_callterm.o(.text) for .text
+    unwind_pr0.o(.text) refers to unwind_prcommon.o(.text) for __ARM_unwind_cpp_prcommon
+    unwind_pr0.o(.ARM.exidx) refers to unwind_pr0.o(.text) for .text
     entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
     entry2.o(.ARM.Collect$$$$00002712) refers to startup_stm32f407xx.o(STACK) for __initial_sp
     entry2.o(__vectab_stack_and_reset_area) refers to startup_stm32f407xx.o(STACK) for __initial_sp
@@ -511,18 +573,6 @@ Section Cross References
     entry8a.o(.ARM.Collect$$$$00000009) refers (Weak) to cpp_init.o(.text) for __cpp_initialize__aeabi_
     entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
     entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
-    arm_begincatch_noexceptions.o(.ARM.exidx) refers to arm_begincatch_noexceptions.o(.text) for .text
-    arm_exceptions_terminate.o(.text) refers to arm_exceptions_globs.o(.text) for __cxa_get_globals
-    arm_exceptions_terminate.o(.ARM.exidx) refers to arm_exceptions_terminate.o(.text) for .text
-    arm_exceptions_support.o(.text) refers to arm_exceptions_support.o(.constdata) for .constdata
-    arm_exceptions_support.o(.ARM.exidx) refers to arm_exceptions_support.o(.text) for .text
-    arm_exceptions_globs.o(.text) refers to cpp_memory.o(.text) for __rt_eh_globals_addr
-    arm_exceptions_globs.o(.text) refers to malloc.o(i.malloc) for malloc
-    arm_exceptions_globs.o(.text) refers to arm_exceptions_mem.o(.text) for __ARM_exceptions_buffer_init
-    arm_exceptions_globs.o(.ARM.exidx) refers to arm_exceptions_globs.o(.text) for .text
-    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
-    arm_exceptions_mem.o(.text) refers to malloc.o(i.malloc) for malloc
-    arm_exceptions_mem.o(.ARM.exidx) refers to arm_exceptions_mem.o(.text) for .text
     malloc.o(i.free) refers to mvars.o(.data) for __microlib_freelist
     malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
     malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist
@@ -556,6 +606,38 @@ Section Cross References
     mallocra.o(i.internal_alloc) refers to memcpya.o(.text) for __aeabi_memcpy
     mallocra.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
     cpp_memory.o(.text) refers to cpp_memory.o(.data) for .data
+    delete.o(i._ZdlPv) refers to malloc.o(i.free) for free
+    delete.o(.ARM.exidx) refers to delete.o(i._ZdlPv) for i._ZdlPv
+    arm_begincatch_noexceptions.o(.ARM.exidx) refers to arm_begincatch_noexceptions.o(.text) for .text
+    bad_alloc_what.o(.ARM.exidx) refers to bad_alloc_what.o(i._ZNKSt9bad_alloc4whatEv) for i._ZNKSt9bad_alloc4whatEv
+    exception_dtor.o(i._ZNSt9exceptionD0Ev) refers to delete.o(i._ZdlPv) for operator delete (void*)
+    exception_dtor.o(.ARM.exidx) refers to exception_dtor.o(i._ZNSt9exceptionD1Ev) for i._ZNSt9exceptionD1Ev
+    exception_dtor.o(.ARM.exidx) refers to exception_dtor.o(i._ZNSt9exceptionD0Ev) for i._ZNSt9exceptionD0Ev
+    arm_exceptions_terminate.o(.text) refers to arm_exceptions_globs.o(.text) for __cxa_get_globals
+    arm_exceptions_terminate.o(.ARM.exidx) refers to arm_exceptions_terminate.o(.text) for .text
+    arm_exceptions_support.o(.text) refers to arm_exceptions_support.o(.constdata) for .constdata
+    arm_exceptions_support.o(.ARM.exidx) refers to arm_exceptions_support.o(.text) for .text
+    arm_exceptions_globs.o(.text) refers to cpp_memory.o(.text) for __rt_eh_globals_addr
+    arm_exceptions_globs.o(.text) refers to malloc.o(i.malloc) for malloc
+    arm_exceptions_globs.o(.text) refers to arm_exceptions_mem.o(.text) for __ARM_exceptions_buffer_init
+    arm_exceptions_globs.o(.ARM.exidx) refers to arm_exceptions_globs.o(.text) for .text
+    unwind_prcommon.o(.text) refers to unwinder.o(.text) for _Unwind_VRS_Get
+    unwind_prcommon.o(.text) refers to unwind_activity.o(.emb_text) for _Unwind_Activity
+    unwind_prcommon.o(.text) refers (Weak) to arm_callunex_noexceptions.o(.text) for __cxa_call_unexpected
+    unwind_prcommon.o(.ARM.exidx) refers to unwind_prcommon.o(.text) for .text
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    exception_what.o(.ARM.exidx) refers to exception_what.o(i._ZNKSt9exception4whatEv) for i._ZNKSt9exception4whatEv
+    arm_exceptions_mem.o(.text) refers to malloc.o(i.malloc) for malloc
+    arm_exceptions_mem.o(.ARM.exidx) refers to arm_exceptions_mem.o(.text) for .text
+    unwinder.o(.emb_text) refers to unwinder.o(.text) for __ARM_Unwind_RaiseException
+    unwinder.o(.text) refers to bsearch.o(.text) for bsearch
+    unwinder.o(.text) refers to unwind_activity.o(.emb_text) for _Unwind_Activity
+    unwinder.o(.text) refers to unwinder.o(.emb_text) for __ARM_Unwind_VRS_corerestore
+    unwinder.o(.text) refers to malloc.o(i.malloc) for malloc
+    unwinder.o(.text) refers to memcpya.o(.text) for __aeabi_memcpy4
+    unwinder.o(.text) refers to malloc.o(i.free) for free
+    unwinder.o(.text) refers (Weak) to unwind_pr0.o(.text) for __aeabi_unwind_cpp_pr0
+    unwinder.o(.ARM.exidx) refers to unwinder.o(.text) for .text
     adafruit_gfx.o(.constdata__ZTV12Adafruit_GFX) refers to adafruit_gfx.o(.constdata__ZTI12Adafruit_GFX) for typeinfo for Adafruit_GFX
     adafruit_gfx.o(.constdata__ZTV12Adafruit_GFX) refers to pure_virt.o(i.__cxa_pure_virtual) for __cxa_pure_virtual
     adafruit_gfx.o(.constdata__ZTV12Adafruit_GFX) refers to adafruit_gfx.o(i._ZN12Adafruit_GFX8drawLineEsssst) for Adafruit_GFX::drawLine(short, short, short, short, unsigned short)
@@ -642,11 +724,24 @@ Section Cross References
     lib_rtti_impl.o(.constdata__ZTIN10__cxxabiv129__pointer_to_member_type_infoE) refers to lib_rtti_impl.o(.constdata__ZTIN10__cxxabiv117__pbase_type_infoE) for typeinfo for __cxxabiv1::__pbase_type_info
     lib_rtti_impl.o(i.__ARM_common_noexcept_landing) refers to arm_exceptions_callterm.o(.text) for __cxa_call_terminate
     lib_rtti_impl.o(.ARM.exidx) refers to lib_rtti_impl.o(i.__ARM_common_noexcept_landing) for i.__ARM_common_noexcept_landing
+    bad_alloc_dtor.o(.constdata__ZTVSt9bad_alloc) refers to bad_alloc_dtor.o(.constdata__ZTISt9bad_alloc) for typeinfo for std::bad_alloc
+    bad_alloc_dtor.o(.constdata__ZTVSt9bad_alloc) refers to bad_alloc_dtor.o(i._ZNSt9bad_allocD1Ev) for std::bad_alloc::~bad_alloc()
+    bad_alloc_dtor.o(.constdata__ZTVSt9bad_alloc) refers to bad_alloc_dtor.o(i._ZNSt9bad_allocD0Ev) for std::bad_alloc::~bad_alloc__deallocating()
+    bad_alloc_dtor.o(.constdata__ZTVSt9bad_alloc) refers to bad_alloc_what.o(i._ZNKSt9bad_alloc4whatEv) for std::bad_alloc::what() const
+    bad_alloc_dtor.o(.constdata__ZTISt9bad_alloc) refers to lib_rtti_impl.o(.constdata__ZTVN10__cxxabiv120__si_class_type_infoE) for vtable for __cxxabiv1::__si_class_type_info
+    bad_alloc_dtor.o(.constdata__ZTISt9bad_alloc) refers to bad_alloc_dtor.o(.constdata__ZTSSt9bad_alloc) for typeinfo name for std::bad_alloc
+    bad_alloc_dtor.o(.constdata__ZTISt9bad_alloc) refers to exception_dtor.o(.constdata__ZTISt9exception) for typeinfo for std::exception
     type_info_dtor.o(.constdata__ZTVSt9type_info) refers to type_info_dtor.o(.constdata__ZTISt9type_info) for typeinfo for std::type_info
     type_info_dtor.o(.constdata__ZTVSt9type_info) refers to type_info_dtor.o(i._ZNSt9type_infoD1Ev) for std::type_info::~type_info()
     type_info_dtor.o(.constdata__ZTVSt9type_info) refers to type_info_dtor.o(i._ZNSt9type_infoD0Ev) for std::type_info::~type_info__deallocating()
     type_info_dtor.o(.constdata__ZTISt9type_info) refers to lib_rtti_impl.o(.constdata__ZTVN10__cxxabiv117__class_type_infoE) for vtable for __cxxabiv1::__class_type_info
     type_info_dtor.o(.constdata__ZTISt9type_info) refers to type_info_dtor.o(.constdata__ZTSSt9type_info) for typeinfo name for std::type_info
+    exception_dtor.o(.constdata__ZTVSt9exception) refers to exception_dtor.o(.constdata__ZTISt9exception) for typeinfo for std::exception
+    exception_dtor.o(.constdata__ZTVSt9exception) refers to exception_dtor.o(i._ZNSt9exceptionD1Ev) for std::exception::~exception()
+    exception_dtor.o(.constdata__ZTVSt9exception) refers to exception_dtor.o(i._ZNSt9exceptionD0Ev) for std::exception::~exception__deallocating()
+    exception_dtor.o(.constdata__ZTVSt9exception) refers to exception_what.o(i._ZNKSt9exception4whatEv) for std::exception::what() const
+    exception_dtor.o(.constdata__ZTISt9exception) refers to lib_rtti_impl.o(.constdata__ZTVN10__cxxabiv117__class_type_infoE) for vtable for __cxxabiv1::__class_type_info
+    exception_dtor.o(.constdata__ZTISt9exception) refers to exception_dtor.o(.constdata__ZTSSt9exception) for typeinfo name for std::exception
 
 
 ==============================================================================
@@ -747,6 +842,95 @@ Removing Unused input sections from the image.
     Removing stm32f4xx_hal_msp.o(.revsh_text), (4 bytes).
     Removing stm32f4xx_hal_msp.o(.rrx_text), (6 bytes).
     Removing stm32f4xx_hal_msp.o(i.HAL_I2C_MspDeInit), (64 bytes).
+    Removing double_screen.o(.rev16_text), (4 bytes).
+    Removing double_screen.o(.revsh_text), (4 bytes).
+    Removing double_screen.o(.rrx_text), (6 bytes).
+    Removing double_screen.o(i._ZN13Double_screen10drawBitmapEssPKhsst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen10drawBitmapEssPKhsstt), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen10drawCircleEssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen10fillCircleEssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen10fillScreenEt), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen10stopscrollEv), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen11drawXBitmapEssPKhsst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen11setRotationEh), (38 bytes).
+    Removing double_screen.o(i._ZN13Double_screen11setTextSizeEh), (8 bytes).
+    Removing double_screen.o(i._ZN13Double_screen11setTextWrapEb), (4 bytes).
+    Removing double_screen.o(i._ZN13Double_screen12clearDisplayEv), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen12drawTriangleEsssssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen12fastSPIwriteEh), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen12fillTriangleEsssssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen12setTextColorEt), (6 bytes).
+    Removing double_screen.o(i._ZN13Double_screen12setTextColorEtt), (6 bytes).
+    Removing double_screen.o(i._ZN13Double_screen13drawFastHLineEssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen13drawFastVLineEssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen13drawRoundRectEssssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen13fillRoundRectEssssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen13invertDisplayEh), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen15startscrollleftEhh), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen16drawCircleHelperEsssht), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen16fillCircleHelperEssshst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen16startscrollrightEhh), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen19startscrolldiagleftEhh), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen20startscrolldiagrightEhh), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen3dimEb), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen5beginEhhb), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen5writeEh), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen6memsetEPhtt), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen6printfEPKc), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen7displayEv), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen8drawCharEsshtth), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen8drawLineEsssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen8drawRectEsssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen8fillRectEsssst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen9drawPixelEsst), (2 bytes).
+    Removing double_screen.o(i._ZN13Double_screen9setCursorEss), (6 bytes).
+    Removing double_screen.o(i._ZN13Double_screenC1EP19__I2C_HandleTypeDefS1_a), (82 bytes).
+    Removing double_screen.o(i._ZNK13Double_screen11getRotationEv), (4 bytes).
+    Removing double_screen.o(i._ZNK13Double_screen5widthEv), (6 bytes).
+    Removing double_screen.o(i._ZNK13Double_screen6heightEv), (6 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
+    Removing double_screen.o(.ARM.exidx), (8 bytes).
     Removing stm32f4xx_hal_i2c.o(.rev16_text), (4 bytes).
     Removing stm32f4xx_hal_i2c.o(.revsh_text), (4 bytes).
     Removing stm32f4xx_hal_i2c.o(.rrx_text), (6 bytes).
@@ -1006,7 +1190,7 @@ Removing Unused input sections from the image.
     Removing adafruit_ssd1306.o(.constdata__ZTI16Adafruit_SSD1306), (12 bytes).
     Removing adafruit_ssd1306.o(.constdata__ZTS16Adafruit_SSD1306), (19 bytes).
 
-352 unused section(s) (total 25851 bytes) removed from the image.
+441 unused section(s) (total 26441 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1016,15 +1200,29 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
+    ../../../clib/unwind_pr.c                0x00000000   Number         0  unwind_pr0.o ABSOLUTE
+    ../../../clib/unwind_pr.c                0x00000000   Number         0  unwind_prcommon.o ABSOLUTE
+    ../../../clib/unwinder.c                 0x00000000   Number         0  unwind_activity.o ABSOLUTE
+    ../../../clib/unwinder.c                 0x00000000   Number         0  unwinder.o ABSOLUTE
+    ../../../clib/unwinder.c                 0x00000000   Number         0  unwind_activity.o ABSOLUTE
+    ../../../clib/unwinder.c                 0x00000000   Number         0  unwinder.o ABSOLUTE
     ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_mem.o ABSOLUTE
-    ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_globs.o ABSOLUTE
-    ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_terminate.o ABSOLUTE
     ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_support.o ABSOLUTE
+    ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_globs.o ABSOLUTE
     ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_callterm.o ABSOLUTE
+    ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_terminate.o ABSOLUTE
+    ../../../edgfe/lib_src/arm_noexceptions.c 0x00000000   Number         0  arm_callunex_noexceptions.o ABSOLUTE
+    ../../../edgfe/lib_src/arm_noexceptions.c 0x00000000   Number         0  arm_newhandler_noexceptions.o ABSOLUTE
     ../../../edgfe/lib_src/arm_noexceptions.c 0x00000000   Number         0  arm_begincatch_noexceptions.o ABSOLUTE
+    ../../../edgfe/lib_src/bad_alloc.c       0x00000000   Number         0  bad_alloc_dtor.o ABSOLUTE
+    ../../../edgfe/lib_src/bad_alloc.c       0x00000000   Number         0  bad_alloc_what.o ABSOLUTE
+    ../../../edgfe/lib_src/delete.c          0x00000000   Number         0  delete.o ABSOLUTE
+    ../../../edgfe/lib_src/exception.c       0x00000000   Number         0  exception_what.o ABSOLUTE
+    ../../../edgfe/lib_src/exception.c       0x00000000   Number         0  exception_dtor.o ABSOLUTE
+    ../../../edgfe/lib_src/new.c             0x00000000   Number         0  new.o ABSOLUTE
     ../../../edgfe/lib_src/pure_virt.c       0x00000000   Number         0  pure_virt.o ABSOLUTE
-    ../../../edgfe/lib_src/typeinfo.c        0x00000000   Number         0  type_info_dtor.o ABSOLUTE
     ../../../edgfe/lib_src/typeinfo.c        0x00000000   Number         0  lib_rtti_impl.o ABSOLUTE
+    ../../../edgfe/lib_src/typeinfo.c        0x00000000   Number         0  type_info_dtor.o ABSOLUTE
     ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c 0x00000000   Number         0  stm32f4xx_hal.o ABSOLUTE
     ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c 0x00000000   Number         0  stm32f4xx_hal_cortex.o ABSOLUTE
     ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c 0x00000000   Number         0  stm32f4xx_hal_dma.o ABSOLUTE
@@ -1051,30 +1249,31 @@ Image Symbol Table
     ../clib/microlib/cpp/cpp_memory.c        0x00000000   Number         0  cpp_memory.o ABSOLUTE
     ../clib/microlib/cpp/cpp_signal.c        0x00000000   Number         0  cpp_signal.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
     ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
     ../clib/microlib/stdlib/abort.c          0x00000000   Number         0  abort.o ABSOLUTE
+    ../clib/microlib/stdlib/bsearch.c        0x00000000   Number         0  bsearch.o ABSOLUTE
     ../clib/microlib/stdlib/rand.c           0x00000000   Number         0  rand.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c 0x00000000   Number         0  stm32f4xx_hal.o ABSOLUTE
     ..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c 0x00000000   Number         0  stm32f4xx_hal_cortex.o ABSOLUTE
@@ -1095,12 +1294,14 @@ Image Symbol Table
     ..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c 0x00000000   Number         0  stm32f4xx_hal_tim_ex.o ABSOLUTE
     ..\Src\Adafruit_GFX.cpp                  0x00000000   Number         0  adafruit_gfx.o ABSOLUTE
     ..\Src\Adafruit_SSD1306.cpp              0x00000000   Number         0  adafruit_ssd1306.o ABSOLUTE
+    ..\Src\Double_screen.cpp                 0x00000000   Number         0  double_screen.o ABSOLUTE
     ..\Src\main.cpp                          0x00000000   Number         0  main.o ABSOLUTE
     ..\Src\stm32f4xx_hal_msp.c               0x00000000   Number         0  stm32f4xx_hal_msp.o ABSOLUTE
     ..\Src\stm32f4xx_it.c                    0x00000000   Number         0  stm32f4xx_it.o ABSOLUTE
     ..\Src\system_stm32f4xx.c                0x00000000   Number         0  system_stm32f4xx.o ABSOLUTE
     ..\\Src\\Adafruit_GFX.cpp                0x00000000   Number         0  adafruit_gfx.o ABSOLUTE
     ..\\Src\\Adafruit_SSD1306.cpp            0x00000000   Number         0  adafruit_ssd1306.o ABSOLUTE
+    ..\\Src\\Double_screen.cpp               0x00000000   Number         0  double_screen.o ABSOLUTE
     ..\\Src\\main.cpp                        0x00000000   Number         0  main.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
     handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
@@ -1245,9 +1446,15 @@ Image Symbol Table
 
     BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$UX$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
     __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    SHT$$ARM_EXIDX$$Base                      - Undefined Reference
+    SHT$$ARM_EXIDX$$Limit                     - Undefined Reference
     __ARM::default_unexpected_handler()       - Undefined Weak Reference
     __ARM_exceptions_buffer_required          - Undefined Weak Reference
+    __aeabi_unwind_cpp_pr1                    - Undefined Weak Reference
+    __aeabi_unwind_cpp_pr2                    - Undefined Weak Reference
+    __cxa_begin_cleanup                       - Undefined Weak Reference
     __cxa_finalize                            - Undefined Weak Reference
+    __cxa_type_match                          - Undefined Weak Reference
     _clock_init                               - Undefined Weak Reference
     _microlib_exit                            - Undefined Weak Reference
     __Vectors_Size                           0x00000188   Number         0  startup_stm32f407xx.o ABSOLUTE
@@ -1477,62 +1684,62 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x00000188   Data   RO            3    RESET               startup_stm32f407xx.o
-    0x08000188   0x08000188   0x00000000   Code   RO         2568  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000188   0x08000188   0x00000004   Code   RO         2596    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x0800018c   0x0800018c   0x00000004   Code   RO         2599    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000190   0x08000190   0x00000000   Code   RO         2601    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000190   0x08000190   0x00000004   Code   RO         2602    .ARM.Collect$$$$00000009  mc_w.l(entry8a.o)
-    0x08000194   0x08000194   0x00000000   Code   RO         2603    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000194   0x08000194   0x00000008   Code   RO         2604    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x0800019c   0x0800019c   0x00000000   Code   RO         2606    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x0800019c   0x0800019c   0x00000000   Code   RO         2608    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x0800019c   0x0800019c   0x00000004   Code   RO         2597    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000188   0x08000188   0x00000000   Code   RO         2851  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000188   0x08000188   0x00000004   Code   RO         2898    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x0800018c   0x0800018c   0x00000004   Code   RO         2901    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000190   0x08000190   0x00000000   Code   RO         2903    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000190   0x08000190   0x00000004   Code   RO         2904    .ARM.Collect$$$$00000009  mc_w.l(entry8a.o)
+    0x08000194   0x08000194   0x00000000   Code   RO         2905    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000194   0x08000194   0x00000008   Code   RO         2906    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x0800019c   0x0800019c   0x00000000   Code   RO         2908    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x0800019c   0x0800019c   0x00000000   Code   RO         2910    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x0800019c   0x0800019c   0x00000004   Code   RO         2899    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x080001a0   0x080001a0   0x00000024   Code   RO            4    .text               startup_stm32f407xx.o
-    0x080001c4   0x080001c4   0x00000062   Code   RO         2571    .text               mc_w.l(uldiv.o)
-    0x08000226   0x08000226   0x00000024   Code   RO         2576    .text               mc_w.l(memseta.o)
+    0x080001c4   0x080001c4   0x00000062   Code   RO         2854    .text               mc_w.l(uldiv.o)
+    0x08000226   0x08000226   0x00000024   Code   RO         2859    .text               mc_w.l(memseta.o)
     0x0800024a   0x0800024a   0x00000002   PAD
-    0x0800024c   0x0800024c   0x00000020   Code   RO         2581    .text               mc_w.l(cpp_init.o)
-    0x0800026c   0x0800026c   0x0000001e   Code   RO         2610    .text               mc_w.l(llshl.o)
-    0x0800028a   0x0800028a   0x00000020   Code   RO         2612    .text               mc_w.l(llushr.o)
-    0x080002aa   0x080002aa   0x00000002   Code   RO         2614    .text               mc_w.l(cpp_signal.o)
-    0x080002ac   0x080002ac   0x00000024   Code   RO         2629    .text               mc_w.l(init.o)
-    0x080002d0   0x080002d0   0x00000056   Code   RO         2681    .text               mc_w.l(__dczerorl2.o)
+    0x0800024c   0x0800024c   0x00000020   Code   RO         2864    .text               mc_w.l(cpp_init.o)
+    0x0800026c   0x0800026c   0x0000001e   Code   RO         2912    .text               mc_w.l(llshl.o)
+    0x0800028a   0x0800028a   0x00000020   Code   RO         2914    .text               mc_w.l(llushr.o)
+    0x080002aa   0x080002aa   0x00000002   Code   RO         2947    .text               mc_w.l(cpp_signal.o)
+    0x080002ac   0x080002ac   0x00000024   Code   RO         2981    .text               mc_w.l(init.o)
+    0x080002d0   0x080002d0   0x00000056   Code   RO         3014    .text               mc_w.l(__dczerorl2.o)
     0x08000326   0x08000326   0x00000002   Code   RO          606    i.BusFault_Handler  stm32f4xx_it.o
     0x08000328   0x08000328   0x00000002   Code   RO          607    i.DebugMon_Handler  stm32f4xx_it.o
     0x0800032a   0x0800032a   0x00000002   PAD
-    0x0800032c   0x0800032c   0x00000024   Code   RO         2137    i.HAL_Delay         stm32f4xx_hal.o
-    0x08000350   0x08000350   0x000001b8   Code   RO         1611    i.HAL_GPIO_Init     stm32f4xx_hal_gpio.o
-    0x08000508   0x08000508   0x0000000e   Code   RO         1614    i.HAL_GPIO_TogglePin  stm32f4xx_hal_gpio.o
-    0x08000516   0x08000516   0x0000000a   Code   RO         1615    i.HAL_GPIO_WritePin  stm32f4xx_hal_gpio.o
-    0x08000520   0x08000520   0x0000000c   Code   RO         2143    i.HAL_GetTick       stm32f4xx_hal.o
-    0x0800052c   0x0800052c   0x00000188   Code   RO          822    i.HAL_I2C_Init      stm32f4xx_hal_i2c.o
-    0x080006b4   0x080006b4   0x0000012c   Code   RO          835    i.HAL_I2C_Master_Transmit  stm32f4xx_hal_i2c.o
+    0x0800032c   0x0800032c   0x00000024   Code   RO         2416    i.HAL_Delay         stm32f4xx_hal.o
+    0x08000350   0x08000350   0x000001b8   Code   RO         1890    i.HAL_GPIO_Init     stm32f4xx_hal_gpio.o
+    0x08000508   0x08000508   0x0000000e   Code   RO         1893    i.HAL_GPIO_TogglePin  stm32f4xx_hal_gpio.o
+    0x08000516   0x08000516   0x0000000a   Code   RO         1894    i.HAL_GPIO_WritePin  stm32f4xx_hal_gpio.o
+    0x08000520   0x08000520   0x0000000c   Code   RO         2422    i.HAL_GetTick       stm32f4xx_hal.o
+    0x0800052c   0x0800052c   0x00000188   Code   RO         1101    i.HAL_I2C_Init      stm32f4xx_hal_i2c.o
+    0x080006b4   0x080006b4   0x0000012c   Code   RO         1114    i.HAL_I2C_Master_Transmit  stm32f4xx_hal_i2c.o
     0x080007e0   0x080007e0   0x000000ac   Code   RO          776    i.HAL_I2C_MspInit   stm32f4xx_hal_msp.o
-    0x0800088c   0x0800088c   0x00000010   Code   RO         2149    i.HAL_IncTick       stm32f4xx_hal.o
-    0x0800089c   0x0800089c   0x00000034   Code   RO         2150    i.HAL_Init          stm32f4xx_hal.o
-    0x080008d0   0x080008d0   0x00000040   Code   RO         2151    i.HAL_InitTick      stm32f4xx_hal.o
+    0x0800088c   0x0800088c   0x00000010   Code   RO         2428    i.HAL_IncTick       stm32f4xx_hal.o
+    0x0800089c   0x0800089c   0x00000034   Code   RO         2429    i.HAL_Init          stm32f4xx_hal.o
+    0x080008d0   0x080008d0   0x00000040   Code   RO         2430    i.HAL_InitTick      stm32f4xx_hal.o
     0x08000910   0x08000910   0x00000030   Code   RO          777    i.HAL_MspInit       stm32f4xx_hal_msp.o
-    0x08000940   0x08000940   0x00000040   Code   RO         2006    i.HAL_NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x08000980   0x08000980   0x00000024   Code   RO         2007    i.HAL_NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x080009a4   0x080009a4   0x00000134   Code   RO         1257    i.HAL_RCC_ClockConfig  stm32f4xx_hal_rcc.o
-    0x08000ad8   0x08000ad8   0x00000020   Code   RO         1264    i.HAL_RCC_GetPCLK1Freq  stm32f4xx_hal_rcc.o
-    0x08000af8   0x08000af8   0x00000060   Code   RO         1266    i.HAL_RCC_GetSysClockFreq  stm32f4xx_hal_rcc.o
-    0x08000b58   0x08000b58   0x0000035c   Code   RO         1269    i.HAL_RCC_OscConfig  stm32f4xx_hal_rcc.o
-    0x08000eb4   0x08000eb4   0x00000028   Code   RO         2011    i.HAL_SYSTICK_Config  stm32f4xx_hal_cortex.o
+    0x08000940   0x08000940   0x00000040   Code   RO         2285    i.HAL_NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x08000980   0x08000980   0x00000024   Code   RO         2286    i.HAL_NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
+    0x080009a4   0x080009a4   0x00000134   Code   RO         1536    i.HAL_RCC_ClockConfig  stm32f4xx_hal_rcc.o
+    0x08000ad8   0x08000ad8   0x00000020   Code   RO         1543    i.HAL_RCC_GetPCLK1Freq  stm32f4xx_hal_rcc.o
+    0x08000af8   0x08000af8   0x00000060   Code   RO         1545    i.HAL_RCC_GetSysClockFreq  stm32f4xx_hal_rcc.o
+    0x08000b58   0x08000b58   0x0000035c   Code   RO         1548    i.HAL_RCC_OscConfig  stm32f4xx_hal_rcc.o
+    0x08000eb4   0x08000eb4   0x00000028   Code   RO         2290    i.HAL_SYSTICK_Config  stm32f4xx_hal_cortex.o
     0x08000edc   0x08000edc   0x00000002   Code   RO          608    i.HardFault_Handler  stm32f4xx_it.o
-    0x08000ede   0x08000ede   0x0000002e   Code   RO          864    i.I2C_IsAcknowledgeFailed  stm32f4xx_hal_i2c.o
-    0x08000f0c   0x08000f0c   0x0000009c   Code   RO          868    i.I2C_MasterRequestWrite  stm32f4xx_hal_i2c.o
-    0x08000fa8   0x08000fa8   0x0000004c   Code   RO          878    i.I2C_WaitOnBTFFlagUntilTimeout  stm32f4xx_hal_i2c.o
-    0x08000ff4   0x08000ff4   0x00000068   Code   RO          879    i.I2C_WaitOnFlagUntilTimeout  stm32f4xx_hal_i2c.o
-    0x0800105c   0x0800105c   0x00000096   Code   RO          880    i.I2C_WaitOnMasterAddressFlagUntilTimeout  stm32f4xx_hal_i2c.o
-    0x080010f2   0x080010f2   0x0000004c   Code   RO          882    i.I2C_WaitOnTXEFlagUntilTimeout  stm32f4xx_hal_i2c.o
+    0x08000ede   0x08000ede   0x0000002e   Code   RO         1143    i.I2C_IsAcknowledgeFailed  stm32f4xx_hal_i2c.o
+    0x08000f0c   0x08000f0c   0x0000009c   Code   RO         1147    i.I2C_MasterRequestWrite  stm32f4xx_hal_i2c.o
+    0x08000fa8   0x08000fa8   0x0000004c   Code   RO         1157    i.I2C_WaitOnBTFFlagUntilTimeout  stm32f4xx_hal_i2c.o
+    0x08000ff4   0x08000ff4   0x00000068   Code   RO         1158    i.I2C_WaitOnFlagUntilTimeout  stm32f4xx_hal_i2c.o
+    0x0800105c   0x0800105c   0x00000096   Code   RO         1159    i.I2C_WaitOnMasterAddressFlagUntilTimeout  stm32f4xx_hal_i2c.o
+    0x080010f2   0x080010f2   0x0000004c   Code   RO         1161    i.I2C_WaitOnTXEFlagUntilTimeout  stm32f4xx_hal_i2c.o
     0x0800113e   0x0800113e   0x00000002   Code   RO          609    i.MemManage_Handler  stm32f4xx_it.o
     0x08001140   0x08001140   0x00000002   Code   RO          610    i.NMI_Handler       stm32f4xx_it.o
     0x08001142   0x08001142   0x00000002   Code   RO          611    i.PendSV_Handler    stm32f4xx_it.o
     0x08001144   0x08001144   0x00000002   Code   RO          612    i.SVC_Handler       stm32f4xx_it.o
     0x08001146   0x08001146   0x00000004   Code   RO          613    i.SysTick_Handler   stm32f4xx_it.o
     0x0800114a   0x0800114a   0x00000002   PAD
-    0x0800114c   0x0800114c   0x0000001c   Code   RO         2425    i.SystemInit        system_stm32f4xx.o
+    0x0800114c   0x0800114c   0x0000001c   Code   RO         2704    i.SystemInit        system_stm32f4xx.o
     0x08001168   0x08001168   0x00000002   Code   RO          614    i.UsageFault_Handler  stm32f4xx_it.o
     0x0800116a   0x0800116a   0x00000002   PAD
     0x0800116c   0x0800116c   0x000001ec   Code   RO          487    i._Z12testdrawlinev  main.o
@@ -1580,22 +1787,22 @@ Memory Map of the image
     0x08002698   0x08002698   0x00000004   Code   RO           39    i._ZNK12Adafruit_GFX11getRotationEv  adafruit_gfx.o
     0x0800269c   0x0800269c   0x00000006   Code   RO           40    i._ZNK12Adafruit_GFX5widthEv  adafruit_gfx.o
     0x080026a2   0x080026a2   0x00000006   Code   RO           41    i._ZNK12Adafruit_GFX6heightEv  adafruit_gfx.o
-    0x080026a8   0x080026a8   0x00000020   Code   RO         2013    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x080026c8   0x080026c8   0x00000006   Code   RO         2459    i.__cxa_pure_virtual  cpprt_w.l(pure_virt.o)
-    0x080026ce   0x080026ce   0x0000000e   Code   RO         2675    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x080026dc   0x080026dc   0x00000002   Code   RO         2676    i.__scatterload_null  mc_w.l(handlers.o)
-    0x080026de   0x080026de   0x0000000e   Code   RO         2677    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080026a8   0x080026a8   0x00000020   Code   RO         2292    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x080026c8   0x080026c8   0x00000006   Code   RO         2742    i.__cxa_pure_virtual  cpprt_w.l(pure_virt.o)
+    0x080026ce   0x080026ce   0x0000000e   Code   RO         3008    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080026dc   0x080026dc   0x00000002   Code   RO         3009    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080026de   0x080026de   0x0000000e   Code   RO         3010    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x080026ec   0x080026ec   0x00000024   Code   RO          497    i.__sti___8_main_cpp_ca8cb490  main.o
     0x08002710   0x08002710   0x000002f4   Code   RO          498    i.main              main.o
     0x08002a04   0x08002a04   0x000005f0   Data   RO          366    .constdata          adafruit_ssd1306.o
     0x08002ff4   0x08002ff4   0x00000020   Data   RO          513    .constdata          main.o
-    0x08003014   0x08003014   0x00000010   Data   RO         2426    .constdata          system_stm32f4xx.o
-    0x08003024   0x08003024   0x00000008   Data   RO         2427    .constdata          system_stm32f4xx.o
+    0x08003014   0x08003014   0x00000010   Data   RO         2705    .constdata          system_stm32f4xx.o
+    0x08003024   0x08003024   0x00000008   Data   RO         2706    .constdata          system_stm32f4xx.o
     0x0800302c   0x0800302c   0x00000028   Data   RO          220    .constdata__ZTV12Adafruit_GFX  adafruit_gfx.o
     0x08003054   0x08003054   0x00000028   Data   RO          455    .constdata__ZTV16Adafruit_SSD1306  adafruit_ssd1306.o
-    0x0800307c   0x0800307c   0x00000020   Data   RO         2673    Region$$Table       anon$$obj.o
+    0x0800307c   0x0800307c   0x00000020   Data   RO         3006    Region$$Table       anon$$obj.o
     0x0800309c   0x0800309c   0x00000004   Data   RO          514    .init_array         main.o
-    0x080030a0   0x0800309c   0x00000000   Data   RO         2579    .init_array         mc_w.l(cpp_init.o)
+    0x080030a0   0x0800309c   0x00000000   Data   RO         2862    .init_array         mc_w.l(cpp_init.o)
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080030a0, Size: 0x00000798, Max: 0x00020000, ABSOLUTE, COMPRESSED[0x00000104])
@@ -1604,8 +1811,8 @@ Memory Map of the image
 
     0x20000000   COMPRESSED   0x00000283   Data   RW          367    .data               adafruit_ssd1306.o
     0x20000283   COMPRESSED   0x00000001   PAD
-    0x20000284   COMPRESSED   0x0000000c   Data   RW         2157    .data               stm32f4xx_hal.o
-    0x20000290   COMPRESSED   0x00000004   Data   RW         2428    .data               system_stm32f4xx.o
+    0x20000284   COMPRESSED   0x0000000c   Data   RW         2436    .data               stm32f4xx_hal.o
+    0x20000290   COMPRESSED   0x00000004   Data   RW         2707    .data               system_stm32f4xx.o
     0x20000294   COMPRESSED   0x00000008   Data   RW          457    .data__ZZN16Adafruit_SSD130621drawFastVLineInternalEssstE7premask  adafruit_ssd1306.o
     0x2000029c   COMPRESSED   0x00000008   Data   RW          458    .data__ZZN16Adafruit_SSD130621drawFastVLineInternalEssstE8postmask  adafruit_ssd1306.o
     0x200002a4        -       0x000000f0   Zero   RW          512    .bss                main.o
