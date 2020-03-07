@@ -16,7 +16,7 @@ class Double_screen {
 
  public:
 
-  Double_screen(I2C_HandleTypeDef *top_hi2c, I2C_HandleTypeDef *bottom_hi2c, int8_t reset); // Constructor
+  Double_screen(); // Constructor
 
   // This MUST be defined by the subclass:
   void drawPixel(int16_t x, int16_t y, uint16_t color);
@@ -85,7 +85,8 @@ class Double_screen {
 
   void dim(bool dim);
 
-  void printf(const char* format);
+  void printTop(const char* format);
+	void printBottom(const char* format);
 	/*--------------------------------------------------------------*/
  protected:
   const int16_t WIDTH, HEIGHT;   // This is the 'raw' display w/h - never changes
@@ -97,7 +98,6 @@ class Double_screen {
     wrap; // If set, 'wrap' text at right edge of display
 	
  private:
-	 Adafruit_SSD1306 *lcd_top, *lcd_bottom;       /* two 128*32 LCD screens */
   int8_t _i2caddr, _vccstate, sid, sclk, dc, rst, cs;
   void fastSPIwrite(uint8_t c);
   void memset(uint8_t buffer[], uint16_t start_address, uint16_t length);

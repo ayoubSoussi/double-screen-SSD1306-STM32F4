@@ -34,3 +34,4 @@ lcd_i2c_driver\main.o: ../Inc/Adafruit_GFX.h
 lcd_i2c_driver\main.o: ../Inc/Adafruit_SSD1306.h
 lcd_i2c_driver\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 lcd_i2c_driver\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+lcd_i2c_driver\main.o: ..\Src\Double_screen.h

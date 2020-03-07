@@ -27,6 +27,7 @@
 #include "Adafruit_SSD1306.h"
 #include "math.h"
 #include "stdlib.h"
+#include "Double_screen.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -74,8 +75,9 @@ void testdrawbitmap(const uint8_t *bitmap, uint8_t w, uint8_t h);
 
 #define OLED_RESET 0
 
-Adafruit_SSD1306 display_top(&hi2c1, OLED_RESET);
-Adafruit_SSD1306 display_bottom(&hi2c2, OLED_RESET);
+//Adafruit_SSD1306 display_top(&hi2c1, OLED_RESET);
+//Adafruit_SSD1306 display_bottom(&hi2c2, OLED_RESET);
+Double_screen mydoubleScreen;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -135,9 +137,30 @@ int main(void)
 		//}
 		
 		/*______________________________________________________________________________________*/
-		display_top.begin(SSD1306_SWITCHCAPVCC, 0x78);
-		display_bottom.begin(SSD1306_SWITCHCAPVCC, 0x78);
-  
+		//display_top.switch_screen(TOP_SCREEN);
+		//display_top.begin(SSD1306_SWITCHCAPVCC, 0x78);
+		//display_top.switch_screen(BOTTOM_SCREEN);
+		//display_bottom.begin(SSD1306_SWITCHCAPVCC, 0x78);
+		mydoubleScreen.begin(SSD1306_SWITCHCAPVCC, 0x78);
+		//display_top.display();
+		//display_bottom.display();
+		mydoubleScreen.display();
+		HAL_Delay(1000);
+		//display_top.clearDisplay();
+		//display_bottom.clearDisplay();
+		
+		mydoubleScreen.clearDisplay();
+		//display_top.drawPixel(10, 10, WHITE);
+		//display_top.display();
+		//display_bottom.clearDisplay();
+		//display_bottom.drawPixel(100, 10, WHITE);
+		//mydoubleScreen.drawPixel(40, 66, WHITE);
+		mydoubleScreen.drawLine(60, 0, 60, 63, WHITE);
+		//display_top.display();
+		//display_bottom.display();
+		mydoubleScreen.display();
+		HAL_Delay(50000);
+		/*
 	//  display_top.clearDisplay();
 		display_top.display();
 		display_bottom.display();
@@ -216,7 +239,7 @@ int main(void)
 		display_top.clearDisplay();
 		display_top.drawBitmap(30, 16,  logo16_glcd_bmp, 16, 16, 1);
 		display_top.display();
-		HAL_Delay(500);
+		HAL_Delay(500);*/
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -229,10 +252,10 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 		// invert the display_top
-    display_top.invertDisplay(true);
+    /*display_top.invertDisplay(true);
     HAL_Delay(1000); 
     display_top.invertDisplay(false);
-    HAL_Delay(1000); 
+    HAL_Delay(1000); */
   }
   /* USER CODE END 3 */
 }
@@ -374,6 +397,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+/*
 void testdrawline(void) {  
   for (int16_t i=0; i<display_top.width(); i+=4) {
     display_top.drawLine(0, 0, i, display_top.height()-1, WHITE);
@@ -521,6 +545,7 @@ void testdrawbitmap(const uint8_t *bitmap, uint8_t w, uint8_t h) {
     }
    }
 }
+*/
 /* USER CODE END 4 */
 
 /**

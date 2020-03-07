@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "string.h"
+#include <algorithm>
 
 #include "glcdfont.h"
 
@@ -18,7 +19,7 @@ uint8_t Buffer_DATA[129]= {SSD1306_DATA,};
 
 
 // the memory buffer for the LCD
-static uint8_t buffer[SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8] = {
+static uint8_t buffer_start[SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8] = {
 0x00,0x06,0x0A,0xFE,0x0A,0xE6,0x00,0xF0,0x00,0xF8,0x00,0xFC,0x00,0x00,0x00,0x00,
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x84,0x48,0xFE,0x32,0xB4,0x48,0x00,0x00,0x00,
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xFE,0x06,0x0A,0x12,0x12,0x12,0x12,
@@ -89,11 +90,12 @@ void Adafruit_SSD1306::drawPixel(int16_t x, int16_t y, uint16_t color) {
 
 
 // initializer for I2C - we only indicate the reset pin!
-Adafruit_SSD1306::Adafruit_SSD1306(I2C_HandleTypeDef *current_hi2c, int8_t reset) :
+Adafruit_SSD1306::Adafruit_SSD1306(I2C_HandleTypeDef* current_i2c, int8_t reset) :
 Adafruit_GFX(SSD1306_LCDWIDTH, SSD1306_LCDHEIGHT) {
   sclk = dc = cs = sid = -1;
   rst = reset;
-	hi2c = current_hi2c;
+	hi2c = current_i2c;
+	std::copy(buffer_start, buffer_start + SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8, buffer);
 }
 
 
@@ -573,5 +575,4 @@ void Adafruit_SSD1306::printf(const char* format)
       buffer[cursor_x + (page+1)*128 + i*8 + j] = FONT_8X16[(format[i] - 32)*16 + j + 8];
     }
   }
-
 }

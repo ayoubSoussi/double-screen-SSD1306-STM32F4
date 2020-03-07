@@ -1,11 +1,17 @@
 #include "Double_screen.h"
 
 
-Double_screen::Double_screen(I2C_HandleTypeDef *top_hi2c, I2C_HandleTypeDef *bottom_hi2c, int8_t reset):
+
+#define ssd1306_swap(a, b) { int16_t t = a; a = b; b = t; }
+
+
+
+extern I2C_HandleTypeDef hi2c1, hi2c2;
+Adafruit_SSD1306 lcd_top(&hi2c1, 0), lcd_bottom(&hi2c2, 0);
+
+
+Double_screen::Double_screen():
 WIDTH(128), HEIGHT(64) {
-	/*Initialize the 2 LCD screens*/
-	lcd_top = new Adafruit_SSD1306(top_hi2c, 0);
-	lcd_bottom = new Adafruit_SSD1306(bottom_hi2c, 0);
 	/*Initialize other parameters*/
 	_width    = WIDTH;
   _height   = HEIGHT;
@@ -17,11 +23,30 @@ WIDTH(128), HEIGHT(64) {
 }
 
 void Double_screen::drawPixel(int16_t x, int16_t y, uint16_t color) {
-	// IMPLEMENT
+	if (y < SSD1306_LCDHEIGHT) {
+		lcd_top.drawPixel(x, y, color);
+	}
+	else {
+		lcd_bottom.drawPixel(x, y - SSD1306_LCDHEIGHT, color);
+	}
 }
 
 void Double_screen::drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color) {
-	// IMPLEMENT
+	if (y0 < SSD1306_LCDHEIGHT && y1 < SSD1306_LCDHEIGHT) { // The two points are in the top side
+		lcd_top.drawLine(x0, y0, x1, y1, color);
+	}
+	else if (y0 >= SSD1306_LCDHEIGHT && y1 >= SSD1306_LCDHEIGHT) { // The two points are in the bottom side
+		lcd_bottom.drawLine(x0, y0 - SSD1306_LCDHEIGHT, x1, y1 - SSD1306_LCDHEIGHT, color);
+	}
+	else {
+		if (y0 >= SSD1306_LCDHEIGHT && y1 < SSD1306_LCDHEIGHT) { // The first point is in the bottom and the second in the top side
+			ssd1306_swap(y0, y1); ssd1306_swap(x0, x1);  // swap the two points
+		}
+		// NOW The first point is in the top and the second in the bottom side
+		
+		lcd_top.drawLine(x0, y0, x1, y1, color);
+		lcd_bottom.drawLine(x0 , y0 - SSD1306_LCDHEIGHT, x1, y1 - SSD1306_LCDHEIGHT, color);
+	}
 }
 
 void Double_screen::drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color) {
@@ -90,16 +115,19 @@ void Double_screen::drawXBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int
 void Double_screen::drawChar(int16_t x, int16_t y, unsigned char c, uint16_t color, uint16_t bg, uint8_t size) {
 	// IMPLEMENT
 }
+
 void Double_screen::write(uint8_t) {
 	// IMPLEMENT
 }
 
 void Double_screen::begin(uint8_t switchvcc, uint8_t i2caddr, bool reset) {
-	// IMPLEMENT
+	lcd_top.begin(SSD1306_SWITCHCAPVCC, 0x78);
+	lcd_bottom.begin(SSD1306_SWITCHCAPVCC, 0x78);
 }
 
 void Double_screen::clearDisplay(void) {
-	// IMPLEMENT
+	lcd_top.clearDisplay();
+	lcd_bottom.clearDisplay();
 }
 
 void Double_screen::invertDisplay(uint8_t i) {
@@ -107,7 +135,8 @@ void Double_screen::invertDisplay(uint8_t i) {
 }
 
 void Double_screen::display() {
-	// IMPLEMENT
+	lcd_top.display();
+	lcd_bottom.display();
 }
 
 void Double_screen::startscrollright(uint8_t start, uint8_t stop) {
@@ -134,8 +163,12 @@ void Double_screen::dim(bool dim) {
 	// IMPLEMENT
 }
 
-void Double_screen::printf(const char* format) {
-	// IMPLEMENT
+void Double_screen::printTop(const char* format) {
+	lcd_top.printf(format);
+}
+
+void Double_screen::printBottom(const char* format) {
+	lcd_bottom.printf(format);
 }
 
 void Double_screen::fastSPIwrite(uint8_t c) {
@@ -165,21 +198,37 @@ int16_t Double_screen::height(void) const {
 }
 
 void Double_screen::setCursor(int16_t x, int16_t y) {
+	// set cursor for the two screens
+	lcd_top.setCursor(x, y);
+	lcd_bottom.setCursor(x, y);
+	// update internal attributes
   cursor_x = x;
   cursor_y = y;
 }
 
 void Double_screen::setTextSize(uint8_t s) {
+	// set text size for the two screens
+	lcd_top.setTextSize(s);
+	lcd_bottom.setTextSize(s);
+	// update internal attributes
   textsize = (s > 0) ? s : 1;
 }
 
 void Double_screen::setTextColor(uint16_t c) {
+	// set text color for the two screens
+	lcd_top.setTextColor(c);
+	lcd_bottom.setTextColor(c);
+	
   // For 'transparent' background, we'll set the bg 
   // to the same as fg instead of using a flag
   textcolor = textbgcolor = c;
 }
 
 void Double_screen::setTextColor(uint16_t c, uint16_t b) {
+	// set text color for the two screens
+	lcd_top.setTextColor(c, b);
+	lcd_bottom.setTextColor(c, b);
+	// update the internal attributes
   textcolor   = c;
   textbgcolor = b; 
 }
