@@ -1,12 +1,18 @@
 #ifndef __SNAKE_GAME
 #define __SNAKE_GAME
 
-
+#ifdef __cplusplus
+ extern "C" {
+#endif
+	 
 /* Includes */
-#include <vector>
 #include <stdint.h>
 #include "Double_screen.h"
-
+#ifdef __cplusplus
+}
+#endif
+// C++ includes
+#include "my_vector.h"
 /* Defines*/
 #define DOUBLE_LCD_WIDTH 128
 #define DOUBLE_LCD_HEIGHT 64
@@ -28,15 +34,22 @@ class Snake_game {
 		void left();
 		void up();
 		void down();
+		int getSize();
+	////// test functions
+		int getElem();
 	
-	private :
-		/* A snake will be represented by a vector of pairs, the pairs represent
-  the points (x, y) of the body of the snake in the screen
-	*/
-		std::vector< std::pair<int, int> > snake;
-	
+	//private :
+		Vector<Vector<int> > snake;
 		Direction snake_direction;
 		Double_screen myscreen();
+		/* Functions for snake list manipulation*/
+		void addNewHead(int x, int y);
+		void popTail();
+	
+		/* Graphic variables and functions*/
+		Double_screen mydoubleScreen;
+		void initializeScreen();
+		void drawCurrentSnake();
 };
 
 

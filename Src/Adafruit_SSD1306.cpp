@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include "string.h"
 #include <algorithm>
-
 #include "glcdfont.h"
 
 #include "Adafruit_GFX.h"

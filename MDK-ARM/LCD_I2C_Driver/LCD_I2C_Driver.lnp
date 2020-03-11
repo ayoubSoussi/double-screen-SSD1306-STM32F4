@@ -25,7 +25,7 @@
 "lcd_i2c_driver\stm32f4xx_hal_tim.o"
 "lcd_i2c_driver\stm32f4xx_hal_tim_ex.o"
 "lcd_i2c_driver\system_stm32f4xx.o"
---library_type=microlib --strict --scatter "LCD_I2C_Driver\LCD_I2C_Driver.sct"
+--strict --scatter "LCD_I2C_Driver\LCD_I2C_Driver.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "LCD_I2C_Driver.map" -o LCD_I2C_Driver\LCD_I2C_Driver.axf

@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
+#include <list>
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -28,6 +29,7 @@
 #include "math.h"
 #include "stdlib.h"
 #include "Double_screen.h"
+#include "Snake_game.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -129,37 +131,36 @@ int main(void)
   MX_I2C1_Init();
 	MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
-	//if (HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t) 0x78, 10, 100) == HAL_OK) {
-		//uint8_t pData[2] = {0x00, 0xA5};
-		//if (HAL_I2C_Master_Transmit(&hi2c1, (uint16_t) 0x78, pData, 2, 100) == HAL_OK) HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
-		//HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout)
-		//HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout)
-		//}
+	Snake_game mygame(20, 10, 20, 50); 
+	if ( mygame.getElem() == 4) {
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
+	}
+	mygame.drawCurrentSnake();
 		
 		/*______________________________________________________________________________________*/
 		//display_top.switch_screen(TOP_SCREEN);
 		//display_top.begin(SSD1306_SWITCHCAPVCC, 0x78);
 		//display_top.switch_screen(BOTTOM_SCREEN);
 		//display_bottom.begin(SSD1306_SWITCHCAPVCC, 0x78);
-		mydoubleScreen.begin(SSD1306_SWITCHCAPVCC, 0x78);
+		//mydoubleScreen.begin(SSD1306_SWITCHCAPVCC, 0x78);
 		//display_top.display();
 		//display_bottom.display();
-		mydoubleScreen.display();
-		HAL_Delay(1000);
+		//mydoubleScreen.display();
+		//HAL_Delay(1000);
 		//display_top.clearDisplay();
 		//display_bottom.clearDisplay();
 		
-		mydoubleScreen.clearDisplay();
+		//mydoubleScreen.clearDisplay();
 		//display_top.drawPixel(10, 10, WHITE);
 		//display_top.display();
 		//display_bottom.clearDisplay();
 		//display_bottom.drawPixel(100, 10, WHITE);
 		//mydoubleScreen.drawPixel(40, 66, WHITE);
-		mydoubleScreen.drawLine(60, 0, 60, 63, WHITE);
+		//mydoubleScreen.drawLine(60, 0, 60, 63, WHITE);
 		//display_top.display();
 		//display_bottom.display();
-		mydoubleScreen.display();
-		HAL_Delay(50000);
+		//mydoubleScreen.display();
+		//HAL_Delay(50000);
 		/*
 	//  display_top.clearDisplay();
 		display_top.display();

@@ -188,7 +188,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -335,7 +335,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>--cpp11 --exceptions</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
               <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../MDK-ARM</IncludePath>
@@ -426,6 +426,11 @@
               <FileName>Snake_game.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Src\Snake_game.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>my_vector.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\my_vector.h</FilePath>
             </File>
           </Files>
         </Group>
