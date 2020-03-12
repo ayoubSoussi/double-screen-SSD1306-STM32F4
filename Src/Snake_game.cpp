@@ -19,6 +19,8 @@ Snake_game::Snake_game(int16_t x_head, int16_t y_head, int16_t x_tail, int16_t y
 		addNewHead(20, 30);
 		addNewHead(30, 30);
 		addNewHead(30, 40);
+		popHead();
+		popHead();
 	}
 }
 
@@ -44,17 +46,28 @@ int Snake_game::getSize() {
 
 /* Add point new head(x, y) to the snake pair list*/
 void Snake_game::addNewHead(int x, int y) {
-	// make the head as a vector
-	Vector<int> head ;
-	head.push_back(x);
-	head.push_back(y);
-	// add the head to the snake
-	snake.push_back(head);
+	if (x >= 0 && x < mydoubleScreen.width() && y >= 0 && y < mydoubleScreen.height()) {
+			// make the head as a vector
+			Vector<int> head ;
+			head.push_back(x);
+			head.push_back(y);
+			// add the head to the snake
+			snake.push_back(head);
+	}
+	else {
+		// throw error : snake is out of the screen
+	}
 }
 /* Delete the tail of the snake (first element)*/
 void Snake_game::popTail() {
-	
+	snake.pop_front();
 }
+
+/* Delete the head of the snake (first element)*/
+void Snake_game::popHead() {
+	snake.pop_back();
+}
+
 /* Initialize the LCD screen*/
 void Snake_game::initializeScreen() {
 		mydoubleScreen.begin(SSD1306_SWITCHCAPVCC, 0x78);

@@ -94,6 +94,9 @@ public:
 
 	// Removes the last element from the Vector
 	void pop_back();
+	
+	// Removes the last element from the Vector
+	void pop_front();
 
 	/*----------------------------*/
 
@@ -344,6 +347,37 @@ inline void Vector<T>::push_back(const T& d)
 	++_size;
 }
 
+template<class T>
+inline void Vector<T>::pop_front()
+{
+	if (_size > 0) {
+		T* p = new T[_space];
+		for (int i = 1; i < _size; ++i)
+		p[i-1] = _elements[i];
+
+	delete[] _elements;
+
+	_elements = p;
+
+	--_size;
+	}
+}
+
+template<class T>
+inline void Vector<T>::pop_back()
+{
+	if (_size > 0) {
+		T* p = new T[_space];
+		for (int i = 0; i < _size-1; ++i)
+		p[i] = _elements[i];
+
+	delete[] _elements;
+
+	_elements = p;
+
+	--_size;
+	}
+}
 
 
 // Accessors

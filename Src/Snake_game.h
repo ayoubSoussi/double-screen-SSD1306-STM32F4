@@ -45,6 +45,7 @@ class Snake_game {
 		/* Functions for snake list manipulation*/
 		void addNewHead(int x, int y);
 		void popTail();
+		void popHead();
 	
 		/* Graphic variables and functions*/
 		Double_screen mydoubleScreen;
