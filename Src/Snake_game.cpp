@@ -21,47 +21,54 @@ Snake_game::Snake_game(int16_t x_head, int16_t y_head, int16_t x_tail, int16_t y
 		addNewHead(20, 30);
 		addNewHead(30, 30);
 		addNewHead(30, 40);
-		Vector<int> point ;
+		/*Vector<int> point ;
 		point.push_back(10);
 		point.push_back(30);
 		//snake.push_front(point);
 		modifyTail(10, 40);
 		addNewHead(90, 40);
-		
+*/		
 	}
 }
 /*This function update the snake vector when it turns right*/
 void Snake_game::right() {
-	if ( snake_direction == RIGHT || snake_direction == LEFT) return;
-	// get current head
-	int x_head = snake.at(getSize()-1).front(), y_head = snake.at(getSize()-1).back();
-	// add the new head
-	addNewHead(x_head + 1, y_head);
-	// get the current tail
-	int x_tail = snake.at(0).front(), y_tail = snake.at(0).back();
-	int x_btail = snake.at(1).front(), y_btail = snake.at(1).back(); // get the point right before the tail
-	if(x_tail == x_btail) {
-		
-	}
-	else if (y_tail == y_btail) {
-		
-	}
-	else {
-		// error
-	}
+	if ( snake_direction == LEFT) return;
+	// add step to the head
+	headStep(RIGHT) ;
+	// add step to the tail
+	tailStep() ;
+	// update the current direction
 	snake_direction = RIGHT;
 }
 /*This function update the snake vector when it turns left*/
 void Snake_game::left() {
-	
+	if ( snake_direction == RIGHT) return;
+	// add step to the head
+	headStep(LEFT) ;
+	// add step to the tail
+	tailStep() ;
+	// update the current direction
+	snake_direction = LEFT;
 }
 /*This function update the snake vector when it turns up*/
 void Snake_game::up() {
-	
+	if ( snake_direction == DOWN) return;
+	// add step to the head
+	headStep(UP) ;
+	// add step to the tail
+	tailStep() ;
+	// update the current direction
+	snake_direction = UP;
 }
 /*This function update the snake vector when it turns down*/
 void Snake_game::down() {
-	
+	if ( snake_direction == UP) return;
+	// add step to the head
+	headStep(DOWN) ;
+	// add step to the tail
+	tailStep() ;
+	// update the current direction
+	snake_direction = DOWN;
 }
 
 int Snake_game::getSize() {
@@ -82,7 +89,21 @@ void Snake_game::addNewHead(int x, int y) {
 		// throw error : snake is out of the screen
 	}
 }
-
+void Snake_game::modifyHead(int x, int y) {
+		if (x >= 0 && x < mydoubleScreen.width() && y >= 0 && y < mydoubleScreen.height()) {
+			// make the head as a vector
+			Vector<int> new_head ;
+			new_head.push_back(x);
+			new_head.push_back(y);
+			// delete the current head
+			snake.pop_back();
+			// add the new head to the snake
+			snake.push_back(new_head);
+	}
+	else {
+		// throw error : snake is out of the screen
+	}
+}
 /* Modify the tail of the snake*/
 void Snake_game::modifyTail(int x, int y) {
 	if (x >= 0 && x < mydoubleScreen.width() && y >= 0 && y < mydoubleScreen.height()) {
@@ -133,11 +154,54 @@ void Snake_game::drawCurrentSnake() {
 	}
 	// display the snake
 	mydoubleScreen.display();
-	HAL_Delay(500);
+	HAL_Delay(TIME_BETWEEN_DRAW);
 }
-
-
+/*This function adds a step to the tail of the snake*/
+void Snake_game::tailStep() {
+	// get the current tail
+	int x_tail = snake.at(0).front(), y_tail = snake.at(0).back();
+	int x_btail = snake.at(1).front(), y_btail = snake.at(1).back(); // get the point right before the tail
+	if(x_tail == x_btail) {
+		if (y_tail - y_btail > SNAKE_STEP) { y_tail -= SNAKE_STEP ; modifyTail(x_tail, y_tail); }
+		else if (y_btail - y_tail > SNAKE_STEP) { y_tail += SNAKE_STEP ;  modifyTail(x_tail, y_tail); }
+		else snake.pop_front(); // delete the tail of the snake
+	}
+	else if (y_tail == y_btail) {
+		if (x_tail - x_btail > SNAKE_STEP) { x_tail -= SNAKE_STEP; modifyTail(x_tail, y_tail); }
+		else if (x_btail - x_tail > SNAKE_STEP) { x_tail += SNAKE_STEP; modifyTail(x_tail, y_tail); }
+		else snake.pop_front(); // delete the tail of the snake
+	}
+	else {
+		// error
+	}
+}
+/*This function adds a step to the head of the snake*/
+void Snake_game::headStep(Direction direction) {
+	// get current head
+	int x_head = snake.at(getSize()-1).front(), y_head = snake.at(getSize()-1).back();
+	switch(direction) {
+		case RIGHT :
+			if (snake_direction == UP || snake_direction == DOWN) addNewHead(x_head + SNAKE_STEP, y_head);
+			else if (snake_direction == RIGHT) modifyHead(x_head + SNAKE_STEP, y_head);
+			break;
+		case LEFT :
+			if (snake_direction == UP || snake_direction == DOWN) addNewHead(x_head - SNAKE_STEP, y_head);
+			else if (snake_direction == LEFT) modifyHead(x_head - SNAKE_STEP, y_head);
+			break;
+		case UP :
+			if (snake_direction == RIGHT || snake_direction == LEFT) addNewHead(x_head , y_head - SNAKE_STEP);
+			else if (snake_direction == UP) modifyHead(x_head , y_head - SNAKE_STEP);
+			break;
+		case DOWN :
+			if (snake_direction == RIGHT || snake_direction == LEFT) addNewHead(x_head , y_head + SNAKE_STEP);
+			else if (snake_direction == DOWN) modifyHead(x_head , y_head + SNAKE_STEP);
+			break;
+		default :
+			break ;
+	}
+}
 //////////////// test functions
 int Snake_game::getElem() {
 	return snake.at(0).back();
 }
+

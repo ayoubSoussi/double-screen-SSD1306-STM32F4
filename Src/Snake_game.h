@@ -16,6 +16,8 @@
 /* Defines*/
 #define DOUBLE_LCD_WIDTH 128
 #define DOUBLE_LCD_HEIGHT 64
+#define SNAKE_STEP 5 // steps of the snake in pixels 
+#define TIME_BETWEEN_DRAW 100 // time between updates of the snake in the screen (in ms)
 
 
 /* Direction of the snake*/
@@ -44,9 +46,12 @@ class Snake_game {
 		Double_screen myscreen();
 		/* Functions for snake list manipulation*/
 		void addNewHead(int x, int y);
+		void modifyHead(int x, int y);
 		void modifyTail(int x, int y);
 		void popTail();
 		void popHead();
+		void headStep(Direction direction) ;
+		void tailStep();
 	
 		/* Graphic variables and functions*/
 		Double_screen mydoubleScreen;

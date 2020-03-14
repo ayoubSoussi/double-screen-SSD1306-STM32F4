@@ -135,8 +135,22 @@ int main(void)
 	if ( mygame.getSize() == 7) {
 		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
 	}
-	mygame.drawCurrentSnake();
-	
+	for (int i=0; i<10; i++) {
+		mygame.drawCurrentSnake();
+		mygame.right();
+	}
+	for (int i=0; i<5; i++) {
+		mygame.drawCurrentSnake();
+		mygame.up();
+	}
+	for (int i=0; i<6; i++) {
+		mygame.drawCurrentSnake();
+		mygame.left();
+	}
+	for (int i=0; i<10; i++) {
+		mygame.drawCurrentSnake();
+		mygame.up();
+	}
 		
 		/*______________________________________________________________________________________*/
 		//display_top.switch_screen(TOP_SCREEN);
