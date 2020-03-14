@@ -44,6 +44,7 @@ class Snake_game {
 		Double_screen myscreen();
 		/* Functions for snake list manipulation*/
 		void addNewHead(int x, int y);
+		void modifyTail(int x, int y);
 		void popTail();
 		void popHead();
 	

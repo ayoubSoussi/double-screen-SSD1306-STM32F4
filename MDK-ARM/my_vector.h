@@ -88,10 +88,13 @@ public:
 	// Removes all elements from the Vector
 	// Capacity is not changed.
 	void clear();
-
+	
+	// Inserts element at the front
+	void push_front(const T& d);
 	// Inserts element at the back
 	void push_back(const T& d);
-
+	// insert a value in a index
+	void insert(int idx, const T& d);
 	// Removes the last element from the Vector
 	void pop_back();
 	
@@ -346,6 +349,35 @@ inline void Vector<T>::push_back(const T& d)
 
 	++_size;
 }
+
+template<class T>
+inline void Vector<T>::push_front(const T& d)
+{
+	if (_space == 0)
+		reserve(8);
+	else if (_size == _space)
+		reserve(2 * _space);
+	
+	T* p = new T[_space] ;
+	p[0] = d;
+	for (int i = 0; i < _size; ++i)
+		p[i+1] = _elements[i] ;
+
+	delete[] _elements;
+	_elements = p ;
+
+	++_size;
+}
+
+template<class T>
+inline void Vector<T>::insert(int idx, const T& d)
+{
+	if (idx >= 0 && idx < _size) {
+		_elements[0] = d;
+	}
+		
+}
+
 
 template<class T>
 inline void Vector<T>::pop_front()

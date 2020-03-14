@@ -132,10 +132,11 @@ int main(void)
 	MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
 	Snake_game mygame(20, 10, 20, 50); 
-	if ( mygame.getSize() == 4) {
+	if ( mygame.getSize() == 7) {
 		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
 	}
 	mygame.drawCurrentSnake();
+	
 		
 		/*______________________________________________________________________________________*/
 		//display_top.switch_screen(TOP_SCREEN);
