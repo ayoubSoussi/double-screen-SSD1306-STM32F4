@@ -80,6 +80,7 @@ void testdrawbitmap(const uint8_t *bitmap, uint8_t w, uint8_t h);
 //Adafruit_SSD1306 display_top(&hi2c1, OLED_RESET);
 //Adafruit_SSD1306 display_bottom(&hi2c2, OLED_RESET);
 Double_screen mydoubleScreen;
+Snake_game mygame; 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -131,11 +132,12 @@ int main(void)
   MX_I2C1_Init();
 	MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
-	Snake_game mygame(20, 10, 20, 50); 
+	
 	if ( mygame.getSize() == 7) {
 		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
 	}
-	for (int i=0; i<10; i++) {
+	mygame.start();
+	/*for (int i=0; i<10; i++) {
 		mygame.drawCurrentSnake();
 		mygame.right();
 	}
@@ -150,7 +152,7 @@ int main(void)
 	for (int i=0; i<10; i++) {
 		mygame.drawCurrentSnake();
 		mygame.up();
-	}
+	}*/
 		
 		/*______________________________________________________________________________________*/
 		//display_top.switch_screen(TOP_SCREEN);
@@ -397,11 +399,24 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOD_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PD8 PD9 PD10 PD11 */
+  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PD12 PD13 PD14 PD15 */
   GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
@@ -410,9 +425,48 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  /* Prevent unused argument(s) compilation warning */
+  UNUSED(GPIO_Pin);
+  /* NOTE: This function Should not be modified, when the callback is needed,
+           the HAL_GPIO_EXTI_Callback could be implemented in the user file
+   */
+	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
+	switch(GPIO_Pin) {
+		case START_BUTTON :
+			mygame.start();
+			break;
+		case RIGHT_BUTTON :
+			mygame.right();
+			break;
+		case LEFT_BUTTON :
+			mygame.left();
+			break;
+		case UP_BUTTON :
+			mygame.up();
+			break;
+		case DOWN_BUTTON :
+			mygame.down();
+			break;
+		default :
+			break;
+	}
+	for (int i=0; i<10000; i++);
+}
 /*
 void testdrawline(void) {  
   for (int16_t i=0; i<display_top.width(); i+=4) {

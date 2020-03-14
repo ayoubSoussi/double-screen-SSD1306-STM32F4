@@ -6,28 +6,35 @@
 	*/
 
 						
-Snake_game::Snake_game(int16_t x_head, int16_t y_head, int16_t x_tail, int16_t y_tail) {
-	if ( x_head != x_tail && y_head != y_tail ) { // The snake is not horizontal nor vertical
-		// Error
-	}
-	else {
-		initializeScreen();
-		// initial snake direction
-		snake_direction = DOWN;
-		////////// test
-		addNewHead(10, 10);
-		addNewHead(10, 20);
-		addNewHead(20, 20);
-		addNewHead(20, 30);
-		addNewHead(30, 30);
-		addNewHead(30, 40);
-		/*Vector<int> point ;
-		point.push_back(10);
-		point.push_back(30);
-		//snake.push_front(point);
-		modifyTail(10, 40);
-		addNewHead(90, 40);
-*/		
+Snake_game::Snake_game() {
+	
+}
+/*Start the game*/
+void Snake_game::start() {
+	// initialize the screen
+	initializeScreen();
+	// initialize the snake
+	addNewHead(INIT_TAIL_X, INIT_TAIL_Y) ;  // add the initial tail
+	addNewHead(INIT_HEAD_X, INIT_HEAD_Y) ;  // add the initial head
+	snake_direction = INIT_DIRECTION ; // add the initial direction
+	while (1) {
+		switch(snake_direction) {
+			case RIGHT :
+				right();
+				break;
+			case LEFT :
+				left();
+				break;
+			case UP :
+				up();
+				break;
+			case DOWN :
+				down();
+				break;
+			default :
+				break ;
+		}
+		drawCurrentSnake();
 	}
 }
 /*This function update the snake vector when it turns right*/

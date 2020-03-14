@@ -17,7 +17,19 @@
 #define DOUBLE_LCD_WIDTH 128
 #define DOUBLE_LCD_HEIGHT 64
 #define SNAKE_STEP 5 // steps of the snake in pixels 
-#define TIME_BETWEEN_DRAW 100 // time between updates of the snake in the screen (in ms)
+#define TIME_BETWEEN_DRAW 300 // time between updates of the snake in the screen (in ms)
+/*Initial parameters of the game*/
+#define INIT_HEAD_X     100
+#define INIT_HEAD_Y			10
+#define INIT_TAIL_X			0
+#define INIT_TAIL_Y			10
+#define INIT_DIRECTION  RIGHT
+/*User buttons pins*/
+#define START_BUTTON     GPIO_PIN_0
+#define RIGHT_BUTTON     GPIO_PIN_11
+#define LEFT_BUTTON			 GPIO_PIN_8
+#define UP_BUTTON        GPIO_PIN_9
+#define DOWN_BUTTON      GPIO_PIN_10
 
 
 /* Direction of the snake*/
@@ -30,7 +42,9 @@ typedef enum {
 
 class Snake_game {
 	public :
-		Snake_game(int16_t x_head, int16_t y_head, int16_t x_tail, int16_t y_tail); // define a Snake game by giving head and tail positions
+		Snake_game(); // define a Snake game by giving head and tail positions
+		/* Game functions*/
+		void start();
 		/* Function for changing position*/
 		void right();
 		void left();
