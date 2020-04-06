@@ -19,7 +19,7 @@
 #define SNAKE_STEP 5 // steps of the snake in pixels 
 #define TIME_BETWEEN_DRAW 300 // time between updates of the snake in the screen (in ms)
 /*Initial parameters of the game*/
-#define INIT_HEAD_X     100
+#define INIT_HEAD_X     50
 #define INIT_HEAD_Y			10
 #define INIT_TAIL_X			0
 #define INIT_TAIL_Y			10

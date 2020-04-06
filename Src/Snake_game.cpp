@@ -18,6 +18,7 @@ void Snake_game::start() {
 	addNewHead(INIT_HEAD_X, INIT_HEAD_Y) ;  // add the initial head
 	snake_direction = INIT_DIRECTION ; // add the initial direction
 	while (1) {
+		__disable_irq();
 		switch(snake_direction) {
 			case RIGHT :
 				right();
@@ -34,6 +35,7 @@ void Snake_game::start() {
 			default :
 				break ;
 		}
+		__enable_irq();
 		drawCurrentSnake();
 	}
 }
@@ -145,6 +147,7 @@ void Snake_game::initializeScreen() {
 }
 /*Draw the current snake in the LCD screens*/
 void Snake_game::drawCurrentSnake() {
+	__disable_irq();
 	// clear the screen
 	mydoubleScreen.clearDisplay();
 	// get the tail
@@ -161,6 +164,7 @@ void Snake_game::drawCurrentSnake() {
 	}
 	// display the snake
 	mydoubleScreen.display();
+	__enable_irq();
 	HAL_Delay(TIME_BETWEEN_DRAW);
 }
 /*This function adds a step to the tail of the snake*/

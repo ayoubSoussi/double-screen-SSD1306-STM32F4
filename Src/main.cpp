@@ -80,7 +80,7 @@ void testdrawbitmap(const uint8_t *bitmap, uint8_t w, uint8_t h);
 //Adafruit_SSD1306 display_top(&hi2c1, OLED_RESET);
 //Adafruit_SSD1306 display_bottom(&hi2c2, OLED_RESET);
 Double_screen mydoubleScreen;
-Snake_game mygame; 
+//Snake_game mygame; 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -133,10 +133,10 @@ int main(void)
 	MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
 	
-	if ( mygame.getSize() == 7) {
+	/*if ( mygame.getSize() == 7) {
 		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-	}
-	mygame.start();
+	}*/
+	//mygame.start();
 	/*for (int i=0; i<10; i++) {
 		mygame.drawCurrentSnake();
 		mygame.right();
@@ -159,25 +159,25 @@ int main(void)
 		//display_top.begin(SSD1306_SWITCHCAPVCC, 0x78);
 		//display_top.switch_screen(BOTTOM_SCREEN);
 		//display_bottom.begin(SSD1306_SWITCHCAPVCC, 0x78);
-		//mydoubleScreen.begin(SSD1306_SWITCHCAPVCC, 0x78);
+		mydoubleScreen.begin(SSD1306_SWITCHCAPVCC, 0x78);
 		//display_top.display();
 		//display_bottom.display();
-		//mydoubleScreen.display();
-		//HAL_Delay(1000);
+		mydoubleScreen.display();
+		HAL_Delay(1000);
 		//display_top.clearDisplay();
 		//display_bottom.clearDisplay();
 		
-		//mydoubleScreen.clearDisplay();
+		mydoubleScreen.clearDisplay();
 		//display_top.drawPixel(10, 10, WHITE);
 		//display_top.display();
 		//display_bottom.clearDisplay();
 		//display_bottom.drawPixel(100, 10, WHITE);
 		//mydoubleScreen.drawPixel(40, 66, WHITE);
-		//mydoubleScreen.drawLine(60, 0, 60, 63, WHITE);
+		mydoubleScreen.fillRoundRect(10, 10, 50, 40, 5, WHITE);
 		//display_top.display();
 		//display_bottom.display();
-		//mydoubleScreen.display();
-		//HAL_Delay(50000);
+		mydoubleScreen.display();
+		HAL_Delay(50000);
 		/*
 	//  display_top.clearDisplay();
 		display_top.display();
@@ -445,8 +445,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   /* NOTE: This function Should not be modified, when the callback is needed,
            the HAL_GPIO_EXTI_Callback could be implemented in the user file
    */
+	__disable_irq();
 	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-	switch(GPIO_Pin) {
+	/*switch(GPIO_Pin) {
 		case START_BUTTON :
 			mygame.start();
 			break;
@@ -464,8 +465,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			break;
 		default :
 			break;
-	}
-	for (int i=0; i<10000; i++);
+	}*/
+	//for (int i=0; i<10000; i++);
+	__enable_irq();
 }
 /*
 void testdrawline(void) {  

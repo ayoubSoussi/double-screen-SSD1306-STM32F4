@@ -50,54 +50,100 @@ void Double_screen::drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uin
 }
 
 void Double_screen::drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color) {
-	// IMPLEMENT
+	//lcd_top.drawFastVLineInternal(x, y, h, color);
 }
 
 void Double_screen::drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color) {
-	// IMPLEMENT
+	
 }
 void Double_screen::drawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color) {
-	// IMPLEMENT
+	int16_t x_1 = x + w, y_1 = y + h;
+	
+	if (x > x_1) ssd1306_swap(x, x_1);
+	if (y > y_1) ssd1306_swap (y, y_1);
+	// draw first part of rect in top LCD
+	lcd_top.drawRect(x, y, w, h, color);
+	
+	if ( y_1 >= SSD1306_LCDHEIGHT) {
+		// draw second part of the rect in bottom LCD
+		lcd_bottom.drawRect(x, y - SSD1306_LCDHEIGHT, w, y_1 , color);
+	}
 }
 
 void Double_screen::fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color) {
-	// IMPLEMENT
+	int16_t x_1 = x + w, y_1 = y + h;
+	
+	if (x > x_1) ssd1306_swap(x, x_1);
+	if (y > y_1) ssd1306_swap (y, y_1);
+	// draw first part of rect in top LCD
+	lcd_top.fillRect(x, y, w, h, color);
+	
+	if ( y_1 >= SSD1306_LCDHEIGHT) {
+		// draw second part of the rect in bottom LCD
+		lcd_bottom.fillRect(x, y - SSD1306_LCDHEIGHT, w, y_1 , color);
+	}
 }
 
 void Double_screen::fillScreen(uint16_t color) {
-	// IMPLEMENT
+	lcd_top.fillScreen(color);
+	lcd_bottom.fillScreen(color);
 }
 
 void Double_screen::drawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color) {
-	// IMPLEMENT
+	// draw first part in top LCD
+	lcd_top.drawCircle(x0, y0, r, color);
+	// draw second part in bottom LCD
+	lcd_bottom.drawCircle(x0, y0 - SSD1306_LCDHEIGHT, r, color);
+	
 }
 
 void Double_screen::drawCircleHelper(int16_t x0, int16_t y0, int16_t r, uint8_t cornername, uint16_t color) {
-	// IMPLEMENT
+	// draw first part in top LCD
+	lcd_top.drawCircleHelper(x0, y0, r, cornername, color);
+	// draw second part in bottom LCD
+	lcd_bottom.drawCircleHelper(x0, y0 - SSD1306_LCDHEIGHT, r, cornername, color);
 }
 
 void Double_screen::fillCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color) {
-	// IMPLEMENT
+	// draw first part in top LCD
+	lcd_top.fillCircle(x0, y0, r, color);
+	// draw second part in bottom LCD
+	lcd_bottom.fillCircle(x0, y0 - SSD1306_LCDHEIGHT, r, color);
 }
 
 void Double_screen::fillCircleHelper(int16_t x0, int16_t y0, int16_t r, uint8_t cornername, int16_t delta, uint16_t color) {
-	// IMPLEMENT
+	// draw first part in top LCD
+	lcd_top.fillCircleHelper(x0, y0, r, cornername, delta, color);
+	// draw second part in bottom LCD
+	lcd_bottom.fillCircleHelper(x0, y0 - SSD1306_LCDHEIGHT, r, cornername, delta, color);
 }
 
 void Double_screen::drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint16_t color) {
-	// IMPLEMENT
+	// draw first part in top LCD
+	lcd_top.drawTriangle(x0, y0, x1, y1, x2, y2, color);
+	// draw second part in bottom LCD
+	lcd_bottom.drawTriangle(x0, y0 - SSD1306_LCDHEIGHT, x1, y1 - SSD1306_LCDHEIGHT, x2, y2 - SSD1306_LCDHEIGHT, color);
 }
 
 void Double_screen::fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint16_t color) {
-	// IMPLEMENT
+	// draw first part in top LCD
+	lcd_top.fillTriangle(x0, y0, x1, y1, x2, y2, color);
+	// draw second part in bottom LCD
+	lcd_bottom.fillTriangle(x0, y0 - SSD1306_LCDHEIGHT, x1, y1 - SSD1306_LCDHEIGHT, x2, y2 - SSD1306_LCDHEIGHT, color);
 }
 
 void Double_screen::drawRoundRect(int16_t x0, int16_t y0, int16_t w, int16_t h, int16_t radius, uint16_t color) {
-	// IMPLEMENT
+	// draw first part in top LCD
+	lcd_top.drawRoundRect(x0, y0, w, h, radius, color);
+	// draw second part in bottom LCD
+	lcd_bottom.drawRoundRect(x0, y0 - SSD1306_LCDHEIGHT, w, h, radius, color);
 }
 
 void Double_screen::fillRoundRect(int16_t x0, int16_t y0, int16_t w, int16_t h, int16_t radius, uint16_t color) {
-	// IMPLEMENT
+	// draw first part in top LCD
+	lcd_top.fillRoundRect(x0, y0, w, h, radius, color);
+	// draw second part in bottom LCD
+	lcd_bottom.fillRoundRect(x0, y0 - SSD1306_LCDHEIGHT, w, h, radius, color);
 }
 
 void Double_screen::drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h, uint16_t color) {
