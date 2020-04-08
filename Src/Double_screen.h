@@ -7,9 +7,13 @@
    
 #include "stm32f4xx_hal.h"
 #include "Adafruit_SSD1306.h"
+#include "glcdfont.h"
 #ifdef __cplusplus
 }
 #endif
+
+#define pgm_read_byte(addr) (*(const unsigned char *)(addr))
+	
 
 
 class Double_screen {

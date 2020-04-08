@@ -173,11 +173,12 @@ int main(void)
 		//display_bottom.clearDisplay();
 		//display_bottom.drawPixel(100, 10, WHITE);
 		//mydoubleScreen.drawPixel(40, 66, WHITE);
-		mydoubleScreen.fillRoundRect(10, 10, 50, 40, 5, WHITE);
+		mydoubleScreen.write('h');
+		mydoubleScreen.write('a');
 		//display_top.display();
 		//display_bottom.display();
 		mydoubleScreen.display();
-		HAL_Delay(50000);
+		HAL_Delay(5000);
 		/*
 	//  display_top.clearDisplay();
 		display_top.display();
@@ -206,58 +207,58 @@ int main(void)
 		
 		display_bottom.clearDisplay();
 		display_bottom.display();
-		
+		*/
 		// draw many lines
 		testdrawline();
-		display_top.display();
+		mydoubleScreen.display();
 		HAL_Delay(2000);
-		display_top.clearDisplay();
+		mydoubleScreen.clearDisplay();
 
 		// draw rectangles
 		testdrawrect();
-		display_top.display();
+		mydoubleScreen.display();
 		HAL_Delay(2000);
-		display_top.clearDisplay();
+		mydoubleScreen.clearDisplay();
 		
 		// draw multiple rectangles
 		testfillrect();
-		display_top.display();
+		mydoubleScreen.display();
 		HAL_Delay(2000);
-		display_top.clearDisplay();
+		mydoubleScreen.clearDisplay();
 		
 		// draw mulitple circles
 		testdrawcircle();
-		display_top.display();
+		mydoubleScreen.display();
 		HAL_Delay(2000);
-		display_top.clearDisplay();
+		mydoubleScreen.clearDisplay();
 		
 		// draw a white circle, 10 pixel radius
-		display_top.fillCircle(display_top.width()/2, display_top.height()/2, 10, WHITE);
-		display_top.display();
+		mydoubleScreen.fillCircle(mydoubleScreen.width()/2, mydoubleScreen.height()/2, 10, WHITE);
+		mydoubleScreen.display();
 		HAL_Delay(2000);
-		display_top.clearDisplay();
+		mydoubleScreen.clearDisplay();
 		
 		testdrawroundrect();
 		HAL_Delay(2000);
-		display_top.clearDisplay();
+		mydoubleScreen.clearDisplay();
 
 		testfillroundrect();
 		HAL_Delay(2000);
-		display_top.clearDisplay();
+		mydoubleScreen.clearDisplay();
 		
 		testdrawtriangle();
 		HAL_Delay(2000);
-		display_top.clearDisplay();
+		mydoubleScreen.clearDisplay();
 		 
 		testfilltriangle();
 		HAL_Delay(2000);
-		display_top.clearDisplay();
+		mydoubleScreen.clearDisplay();
 		
-		// miniature bitmap display_top
-		display_top.clearDisplay();
-		display_top.drawBitmap(30, 16,  logo16_glcd_bmp, 16, 16, 1);
-		display_top.display();
-		HAL_Delay(500);*/
+		// miniature bitmap mydoubleScreen
+		mydoubleScreen.clearDisplay();
+		mydoubleScreen.drawBitmap(30, 16,  logo16_glcd_bmp, 16, 16, 1);
+		mydoubleScreen.display();
+		HAL_Delay(500);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -270,10 +271,10 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 		// invert the display_top
-    /*display_top.invertDisplay(true);
+    mydoubleScreen.invertDisplay(true);
     HAL_Delay(1000); 
-    display_top.invertDisplay(false);
-    HAL_Delay(1000); */
+    mydoubleScreen.invertDisplay(false);
+    HAL_Delay(1000); 
   }
   /* USER CODE END 3 */
 }
@@ -469,117 +470,117 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	//for (int i=0; i<10000; i++);
 	__enable_irq();
 }
-/*
+
 void testdrawline(void) {  
-  for (int16_t i=0; i<display_top.width(); i+=4) {
-    display_top.drawLine(0, 0, i, display_top.height()-1, WHITE);
-    display_top.display();
+  for (int16_t i=0; i<mydoubleScreen.width(); i+=4) {
+    mydoubleScreen.drawLine(0, 0, i, mydoubleScreen.height()-1, WHITE);
+    mydoubleScreen.display();
   }
-  for (int16_t i=0; i<display_top.height(); i+=4) {
-    display_top.drawLine(0, 0, display_top.width()-1, i, WHITE);
-    display_top.display();
-  }
-  HAL_Delay(250);
-  
-  display_top.clearDisplay();
-  for (int16_t i=0; i<display_top.width(); i+=4) {
-    display_top.drawLine(0, display_top.height()-1, i, 0, WHITE);
-    display_top.display();
-  }
-  for (int16_t i=display_top.height()-1; i>=0; i-=4) {
-    display_top.drawLine(0, display_top.height()-1, display_top.width()-1, i, WHITE);
-    display_top.display();
+  for (int16_t i=0; i<mydoubleScreen.height(); i+=4) {
+    mydoubleScreen.drawLine(0, 0, mydoubleScreen.width()-1, i, WHITE);
+    mydoubleScreen.display();
   }
   HAL_Delay(250);
   
-  display_top.clearDisplay();
-  for (int16_t i=display_top.width()-1; i>=0; i-=4) {
-    display_top.drawLine(display_top.width()-1, display_top.height()-1, i, 0, WHITE);
-    display_top.display();
+  mydoubleScreen.clearDisplay();
+  for (int16_t i=0; i<mydoubleScreen.width(); i+=4) {
+    mydoubleScreen.drawLine(0, mydoubleScreen.height()-1, i, 0, WHITE);
+    mydoubleScreen.display();
   }
-  for (int16_t i=display_top.height()-1; i>=0; i-=4) {
-    display_top.drawLine(display_top.width()-1, display_top.height()-1, 0, i, WHITE);
-    display_top.display();
+  for (int16_t i=mydoubleScreen.height()-1; i>=0; i-=4) {
+    mydoubleScreen.drawLine(0, mydoubleScreen.height()-1, mydoubleScreen.width()-1, i, WHITE);
+    mydoubleScreen.display();
+  }
+  HAL_Delay(250);
+  
+  mydoubleScreen.clearDisplay();
+  for (int16_t i=mydoubleScreen.width()-1; i>=0; i-=4) {
+    mydoubleScreen.drawLine(mydoubleScreen.width()-1, mydoubleScreen.height()-1, i, 0, WHITE);
+    mydoubleScreen.display();
+  }
+  for (int16_t i=mydoubleScreen.height()-1; i>=0; i-=4) {
+    mydoubleScreen.drawLine(mydoubleScreen.width()-1, mydoubleScreen.height()-1, 0, i, WHITE);
+    mydoubleScreen.display();
   }
   HAL_Delay(250);
 
-  display_top.clearDisplay();
-  for (int16_t i=0; i<display_top.height(); i+=4) {
-    display_top.drawLine(display_top.width()-1, 0, 0, i, WHITE);
-    display_top.display();
+  mydoubleScreen.clearDisplay();
+  for (int16_t i=0; i<mydoubleScreen.height(); i+=4) {
+    mydoubleScreen.drawLine(mydoubleScreen.width()-1, 0, 0, i, WHITE);
+    mydoubleScreen.display();
   }
-  for (int16_t i=0; i<display_top.width(); i+=4) {
-    display_top.drawLine(display_top.width()-1, 0, i, display_top.height()-1, WHITE); 
-    display_top.display();
+  for (int16_t i=0; i<mydoubleScreen.width(); i+=4) {
+    mydoubleScreen.drawLine(mydoubleScreen.width()-1, 0, i, mydoubleScreen.height()-1, WHITE); 
+    mydoubleScreen.display();
   }
   HAL_Delay(250);
 }
 
 void testdrawrect(void) {
-  for (int16_t i=0; i<display_top.height()/2; i+=2) {
-    display_top.drawRect(i, i, display_top.width()-2*i, display_top.height()-2*i, WHITE);
-    display_top.display();
+  for (int16_t i=0; i<mydoubleScreen.height()/2; i+=2) {
+    mydoubleScreen.drawRect(i, i, mydoubleScreen.width()-2*i, mydoubleScreen.height()-2*i, WHITE);
+    mydoubleScreen.display();
     HAL_Delay(1);
   }
 }
 
 void testfillrect(void) {
   uint8_t color = 1;
-  for (int16_t i=0; i<display_top.height()/2; i+=3) {
+  for (int16_t i=0; i<mydoubleScreen.height()/2; i+=3) {
     // alternate colors
-    display_top.fillRect(i, i, display_top.width()-i*2, display_top.height()-i*2, color%2);
-    display_top.display();
+    mydoubleScreen.fillRect(i, i, mydoubleScreen.width()-i*2, mydoubleScreen.height()-i*2, color%2);
+    mydoubleScreen.display();
     HAL_Delay(1);
     color++;
   }
 }
 
 void testdrawcircle(void) {
-  for (int16_t i=0; i<display_top.height(); i+=2) {
-    display_top.drawCircle(display_top.width()/2, display_top.height()/2, i, WHITE);
-    display_top.display();
+  for (int16_t i=0; i<mydoubleScreen.height(); i+=2) {
+    mydoubleScreen.drawCircle(mydoubleScreen.width()/2, mydoubleScreen.height()/2, i, WHITE);
+    mydoubleScreen.display();
     HAL_Delay(1);
   }
 }
 
 void testdrawroundrect(void) {
-  for (int16_t i=0; i<display_top.height()/2-2; i+=2) {
-    display_top.drawRoundRect(i, i, display_top.width()-2*i, display_top.height()-2*i, display_top.height()/4, WHITE);
-    display_top.display();
+  for (int16_t i=0; i<mydoubleScreen.height()/2-2; i+=2) {
+    mydoubleScreen.drawRoundRect(i, i, mydoubleScreen.width()-2*i, mydoubleScreen.height()-2*i, mydoubleScreen.height()/4, WHITE);
+    mydoubleScreen.display();
     HAL_Delay(1);
   }
 }
 
 void testfillroundrect(void) {
   uint8_t color = WHITE;
-  for (int16_t i=0; i<display_top.height()/2-2; i+=2) {
-    display_top.fillRoundRect(i, i, display_top.width()-2*i, display_top.height()-2*i, display_top.height()/4, color);
+  for (int16_t i=0; i<mydoubleScreen.height()/2-2; i+=2) {
+    mydoubleScreen.fillRoundRect(i, i, mydoubleScreen.width()-2*i, mydoubleScreen.height()-2*i, mydoubleScreen.height()/4, color);
     if (color == WHITE) color = BLACK;
     else color = WHITE;
-    display_top.display();
+    mydoubleScreen.display();
     HAL_Delay(1);
   }
 }
 
 void testdrawtriangle(void) {
-  for (int16_t i=0; i<min(display_top.width(),display_top.height())/2; i+=5) {
-    display_top.drawTriangle(display_top.width()/2, display_top.height()/2-i,
-                     display_top.width()/2-i, display_top.height()/2+i,
-                     display_top.width()/2+i, display_top.height()/2+i, WHITE);
-    display_top.display();
+  for (int16_t i=0; i<min(mydoubleScreen.width(),mydoubleScreen.height())/2; i+=5) {
+    mydoubleScreen.drawTriangle(mydoubleScreen.width()/2, mydoubleScreen.height()/2-i,
+                     mydoubleScreen.width()/2-i, mydoubleScreen.height()/2+i,
+                     mydoubleScreen.width()/2+i, mydoubleScreen.height()/2+i, WHITE);
+    mydoubleScreen.display();
     HAL_Delay(1);
   }
 }
 
 void testfilltriangle(void) {
   uint8_t color = WHITE;
-  for (int16_t i=min(display_top.width(),display_top.height())/2; i>0; i-=5) {
-    display_top.fillTriangle(display_top.width()/2, display_top.height()/2-i,
-                     display_top.width()/2-i, display_top.height()/2+i,
-                     display_top.width()/2+i, display_top.height()/2+i, WHITE);
+  for (int16_t i=min(mydoubleScreen.width(),mydoubleScreen.height())/2; i>0; i-=5) {
+    mydoubleScreen.fillTriangle(mydoubleScreen.width()/2, mydoubleScreen.height()/2-i,
+                     mydoubleScreen.width()/2-i, mydoubleScreen.height()/2+i,
+                     mydoubleScreen.width()/2+i, mydoubleScreen.height()/2+i, WHITE);
     if (color == WHITE) color = BLACK;
     else color = WHITE;
-    display_top.display();
+    mydoubleScreen.display();
     HAL_Delay(1);
   }
 }
@@ -598,18 +599,18 @@ void testdrawbitmap(const uint8_t *bitmap, uint8_t w, uint8_t h) {
   while (1) {
     // draw each icon
     for (uint8_t f=0; f< NUMFLAKES; f++) {
-      display_top.drawBitmap(icons[f][XPOS], icons[f][YPOS], logo16_glcd_bmp, w, h, WHITE);
+      mydoubleScreen.drawBitmap(icons[f][XPOS], icons[f][YPOS], logo16_glcd_bmp, w, h, WHITE);
     }
-    display_top.display();
+    mydoubleScreen.display();
     HAL_Delay(200);
     
     // then erase it + move it
     for (uint8_t f=0; f< NUMFLAKES; f++) {
-      display_top.drawBitmap(icons[f][XPOS], icons[f][YPOS],  logo16_glcd_bmp, w, h, BLACK);
+      mydoubleScreen.drawBitmap(icons[f][XPOS], icons[f][YPOS],  logo16_glcd_bmp, w, h, BLACK);
       // move it
       icons[f][YPOS] += icons[f][DELTAY];
       // if its gone, reinit
-      if (icons[f][YPOS] > display_top.height()) {
+      if (icons[f][YPOS] > mydoubleScreen.height()) {
 	icons[f][XPOS] = rand();
 	icons[f][YPOS] = 0;
 	icons[f][DELTAY] = rand() ;
@@ -617,7 +618,7 @@ void testdrawbitmap(const uint8_t *bitmap, uint8_t w, uint8_t h) {
     }
    }
 }
-*/
+
 /* USER CODE END 4 */
 
 /**

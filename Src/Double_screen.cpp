@@ -18,7 +18,8 @@ WIDTH(128), HEIGHT(64) {
   rotation  = 0;
   cursor_y  = cursor_x    = 0;
   textsize  = 1;
-  textcolor = textbgcolor = 0xFFFF;
+  textcolor = WHITE;
+	textbgcolor = BLACK;
   wrap      = true;
 }
 
@@ -147,23 +148,90 @@ void Double_screen::fillRoundRect(int16_t x0, int16_t y0, int16_t w, int16_t h, 
 }
 
 void Double_screen::drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h, uint16_t color) {
-	// IMPLEMENT
+	int16_t i, j, byteWidth = (w + 7) / 8;
+
+  for(j=0; j<h; j++) {
+    for(i=0; i<w; i++ ) {
+      if(pgm_read_byte(bitmap + j * byteWidth + i / 8) & (128 >> (i & 7))) {
+        drawPixel(x+i, y+j, color);
+      }
+    }
+  }
 }
 
 void Double_screen::drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h, uint16_t color, uint16_t bg) {
-	// IMPLEMENT
+	int16_t i, j, byteWidth = (w + 7) / 8;
+  
+  for(j=0; j<h; j++) {
+    for(i=0; i<w; i++ ) {
+      if(pgm_read_byte(bitmap + j * byteWidth + i / 8) & (128 >> (i & 7))) {
+        drawPixel(x+i, y+j, color);
+      }
+      else {
+      	drawPixel(x+i, y+j, bg);
+      }
+    }
+  }
 }
 
 void Double_screen::drawXBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h, uint16_t color) {
-	// IMPLEMENT
+	int16_t i, j, byteWidth = (w + 7) / 8;
+  
+  for(j=0; j<h; j++) {
+    for(i=0; i<w; i++ ) {
+      if(pgm_read_byte(bitmap + j * byteWidth + i / 8) & (1 << (i % 8))) {
+        drawPixel(x+i, y+j, color);
+      }
+    }
+  }
 }
 
 void Double_screen::drawChar(int16_t x, int16_t y, unsigned char c, uint16_t color, uint16_t bg, uint8_t size) {
-	// IMPLEMENT
+	if((x >= _width)            || // Clip right
+     (y >= _height)           || // Clip bottom
+     ((x + 6 * size - 1) < 0) || // Clip left
+     ((y + 8 * size - 1) < 0))   // Clip top
+    return;
+
+  for (int8_t i=0; i<6; i++ ) {
+    uint8_t line;
+    if (i == 5) 
+      line = 0x0;
+    else 
+      line = pgm_read_byte(FONT_5x7+(c*5)+i);
+    for (int8_t j = 0; j<8; j++) {
+      if (line & 0x1) {
+        if (size == 1) // default size
+          drawPixel(x+i, y+j, color);
+        else {  // big size
+          fillRect(x+(i*size), y+(j*size), size, size, color);
+        }
+      } else if (bg != color) {
+        if (size == 1) // default size
+          drawPixel(x+i, y+j, bg);
+        else {  // big size
+          fillRect(x+i*size, y+j*size, size, size, bg);
+        }
+      }
+      line >>= 1;
+    }
+  }
 }
 
-void Double_screen::write(uint8_t) {
-	// IMPLEMENT
+void Double_screen::write(uint8_t c) {
+	if (c == '\n') {
+    cursor_y += textsize*8;
+    cursor_x  = 0;
+  } else if (c == '\r') {
+    // skip em
+  } else {
+			drawChar(cursor_x, cursor_y, c, textcolor, textbgcolor, textsize);
+			cursor_x += textsize*6;
+			if (wrap && (cursor_x > (_width - textsize*6))) {
+				cursor_y += textsize*8;
+				cursor_x = 0;
+			}
+	}
 }
 
 void Double_screen::begin(uint8_t switchvcc, uint8_t i2caddr, bool reset) {
@@ -177,7 +245,8 @@ void Double_screen::clearDisplay(void) {
 }
 
 void Double_screen::invertDisplay(uint8_t i) {
-	// IMPLEMENT
+	lcd_top.invertDisplay(i);
+	lcd_bottom.invertDisplay(i);
 }
 
 void Double_screen::display() {
