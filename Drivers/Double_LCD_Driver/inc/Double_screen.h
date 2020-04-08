@@ -1,3 +1,12 @@
+/*
+ * @file    Double_screen.h
+ * @author  Ayoub SOUSSI
+ * @version V0.0.1
+ * @date    08-04-2020
+ * @brief   Header file for 2 LCD displays driver
+*/
+
+
 #ifndef __DOUBLE_SCREEN
 #define __DOUBLE_SCREEN
 

@@ -338,7 +338,7 @@
               <MiscControls>--cpp11 --exceptions</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;  ../Drivers/STM32F4xx_HAL_Driver/Inc;  ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;  ../Drivers/CMSIS/Include;  ../MDK-ARM</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../MDK-ARM;../Drivers/Double_LCD_Driver/inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -393,24 +393,9 @@
           <GroupName>Application/User</GroupName>
           <Files>
             <File>
-              <FileName>Adafruit_GFX.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Src\Adafruit_GFX.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Adafruit_SSD1306.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Src\Adafruit_SSD1306.cpp</FilePath>
-            </File>
-            <File>
               <FileName>main.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Src\main.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Double_screen.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Src\Double_screen.cpp</FilePath>
             </File>
             <File>
               <FileName>Snake_game.cpp</FileName>
@@ -531,6 +516,26 @@
               <FileName>system_stm32f4xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/system_stm32f4xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/DoubleLCD</GroupName>
+          <Files>
+            <File>
+              <FileName>Adafruit_GFX.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Drivers\Double_LCD_Driver\src\Adafruit_GFX.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Adafruit_SSD1306.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Drivers\Double_LCD_Driver\src\Adafruit_SSD1306.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Double_screen.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Drivers\Double_LCD_Driver\src\Double_screen.cpp</FilePath>
             </File>
           </Files>
         </Group>

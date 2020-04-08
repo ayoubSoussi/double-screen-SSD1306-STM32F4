@@ -1,6 +1,13 @@
+/*
+ * @file    Double_screen.cpp
+ * @author  Ayoub SOUSSI
+ * @version V0.0.1
+ * @date    08-04-2020
+ * @brief   C++ file for 2 LCD displays driver
+*/
+
+
 #include "Double_screen.h"
-
-
 
 #define ssd1306_swap(a, b) { int16_t t = a; a = b; b = t; }
 
@@ -86,7 +93,9 @@ void Double_screen::fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_
 }
 
 void Double_screen::fillScreen(uint16_t color) {
+	// fill first part in top LCD
 	lcd_top.fillScreen(color);
+	// fill second part in bottom LCD
 	lcd_bottom.fillScreen(color);
 }
 
@@ -276,14 +285,6 @@ void Double_screen::stopscroll(void) {
 
 void Double_screen::dim(bool dim) {
 	// IMPLEMENT
-}
-
-void Double_screen::printTop(const char* format) {
-	lcd_top.printf(format);
-}
-
-void Double_screen::printBottom(const char* format) {
-	lcd_bottom.printf(format);
 }
 
 void Double_screen::fastSPIwrite(uint8_t c) {

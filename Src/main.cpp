@@ -24,12 +24,18 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "Adafruit_GFX.h"
-#include "Adafruit_SSD1306.h"
 #include "math.h"
 #include "stdlib.h"
+
+
+/*UNCOMMENT TO ACTIVATE THE SNAKE GAME FOR TEST*/
+//#define SNAKE_GAME_TEST
+
+#ifndef SNAKE_GAME_TEST
 #include "Double_screen.h"
+#else
 #include "Snake_game.h"
+#endif
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,6 +71,8 @@ static void MX_I2C1_Init(void);
 static void MX_I2C2_Init(void);
 /* USER CODE BEGIN PFP */
 void SystemClock_Config(void);
+
+#ifndef SNAKE_GAME_TEST
 void testdrawline(void);
 void testdrawrect(void);
 void testfillrect(void);
@@ -74,13 +82,17 @@ void testfillroundrect(void);
 void testdrawtriangle(void);
 void testfilltriangle(void);
 void testdrawbitmap(const uint8_t *bitmap, uint8_t w, uint8_t h);
+#endif
+
 
 #define OLED_RESET 0
 
-//Adafruit_SSD1306 display_top(&hi2c1, OLED_RESET);
-//Adafruit_SSD1306 display_bottom(&hi2c2, OLED_RESET);
+
+#ifndef SNAKE_GAME_TEST
 Double_screen mydoubleScreen;
-//Snake_game mygame; 
+#else
+Snake_game mygame;
+#endif
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -90,6 +102,7 @@ Double_screen mydoubleScreen;
 #define YPOS 1
 #define DELTAY 2
 
+#ifndef SNAKE_GAME_TEST
 
 #define LOGO16_GLCD_HEIGHT 16 
 #define LOGO16_GLCD_WIDTH  16 
@@ -98,6 +111,7 @@ static const unsigned char logo16_glcd_bmp[] =
 0x00,0x00,0x00,0x20,0x00,0x60,0x00,0xE0,0x00,0xE0,0xEE,0xCC,0x7E,0xCE,0x7F,0xDE,
 0x7F,0xFF,0x3F,0xFB,0x3B,0x33,0x11,0x27,0x00,0x0E,0x00,0x0E,0x00,0x0C,0x00,0x00
 };
+#endif
 /* USER CODE END 0 */
 
 /**
@@ -132,82 +146,14 @@ int main(void)
   MX_I2C1_Init();
 	MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
-	
-	/*if ( mygame.getSize() == 7) {
-		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-	}*/
-	//mygame.start();
-	/*for (int i=0; i<10; i++) {
-		mygame.drawCurrentSnake();
-		mygame.right();
-	}
-	for (int i=0; i<5; i++) {
-		mygame.drawCurrentSnake();
-		mygame.up();
-	}
-	for (int i=0; i<6; i++) {
-		mygame.drawCurrentSnake();
-		mygame.left();
-	}
-	for (int i=0; i<10; i++) {
-		mygame.drawCurrentSnake();
-		mygame.up();
-	}*/
-		
-		/*______________________________________________________________________________________*/
-		//display_top.switch_screen(TOP_SCREEN);
-		//display_top.begin(SSD1306_SWITCHCAPVCC, 0x78);
-		//display_top.switch_screen(BOTTOM_SCREEN);
-		//display_bottom.begin(SSD1306_SWITCHCAPVCC, 0x78);
+#ifdef SNAKE_GAME_TEST
+		mygame.start();
+#else
 		mydoubleScreen.begin(SSD1306_SWITCHCAPVCC, 0x78);
-		//display_top.display();
-		//display_bottom.display();
 		mydoubleScreen.display();
 		HAL_Delay(1000);
-		//display_top.clearDisplay();
-		//display_bottom.clearDisplay();
-		
 		mydoubleScreen.clearDisplay();
-		//display_top.drawPixel(10, 10, WHITE);
-		//display_top.display();
-		//display_bottom.clearDisplay();
-		//display_bottom.drawPixel(100, 10, WHITE);
-		//mydoubleScreen.drawPixel(40, 66, WHITE);
-		mydoubleScreen.write('h');
-		mydoubleScreen.write('a');
-		//display_top.display();
-		//display_bottom.display();
-		mydoubleScreen.display();
-		HAL_Delay(5000);
-		/*
-	//  display_top.clearDisplay();
-		display_top.display();
-		display_bottom.display();
-		HAL_Delay(5000);
-	//  while(1);
-		display_top.clearDisplay();
-		display_top.display();
-		display_bottom.clearDisplay();
-		display_bottom.display();
-		//Display text
-		display_top.setTextSize(2);
-		display_top.setTextColor(WHITE);
-		display_top.setCursor(28,8);
-		display_top.printf("Ayoub");
-		display_top.display();
-		
-		display_bottom.setTextSize(2);
-		display_bottom.setTextColor(WHITE);
-		display_bottom.setCursor(28,8);
-		display_bottom.printf("Soussi");
-		display_bottom.display();
-		HAL_Delay(2000);
-		display_top.clearDisplay();
-		display_top.display();
-		
-		display_bottom.clearDisplay();
-		display_bottom.display();
-		*/
+	
 		// draw many lines
 		testdrawline();
 		mydoubleScreen.display();
@@ -259,6 +205,7 @@ int main(void)
 		mydoubleScreen.drawBitmap(30, 16,  logo16_glcd_bmp, 16, 16, 1);
 		mydoubleScreen.display();
 		HAL_Delay(500);
+#endif
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -270,11 +217,13 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+#ifndef SNAKE_GAME_TEST
 		// invert the display_top
     mydoubleScreen.invertDisplay(true);
     HAL_Delay(1000); 
     mydoubleScreen.invertDisplay(false);
     HAL_Delay(1000); 
+#endif
   }
   /* USER CODE END 3 */
 }
@@ -448,7 +397,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
    */
 	__disable_irq();
 	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-	/*switch(GPIO_Pin) {
+#ifdef SNAKE_GAME_TEST
+	switch(GPIO_Pin) {
 		case START_BUTTON :
 			mygame.start();
 			break;
@@ -466,11 +416,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			break;
 		default :
 			break;
-	}*/
-	//for (int i=0; i<10000; i++);
+	}
+#endif
+	for (int i=0; i<10000; i++);
 	__enable_irq();
 }
 
+#ifndef SNAKE_GAME_TEST
 void testdrawline(void) {  
   for (int16_t i=0; i<mydoubleScreen.width(); i+=4) {
     mydoubleScreen.drawLine(0, 0, i, mydoubleScreen.height()-1, WHITE);
@@ -618,6 +570,7 @@ void testdrawbitmap(const uint8_t *bitmap, uint8_t w, uint8_t h) {
     }
    }
 }
+#endif
 
 /* USER CODE END 4 */
 
