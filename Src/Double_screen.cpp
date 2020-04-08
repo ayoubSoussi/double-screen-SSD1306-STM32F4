@@ -67,7 +67,7 @@ void Double_screen::drawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_
 	
 	if ( y_1 >= SSD1306_LCDHEIGHT) {
 		// draw second part of the rect in bottom LCD
-		lcd_bottom.drawRect(x, y - SSD1306_LCDHEIGHT, w, y_1 , color);
+		lcd_bottom.drawRect(x, y - SSD1306_LCDHEIGHT, w, h , color);
 	}
 }
 
@@ -81,7 +81,7 @@ void Double_screen::fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_
 	
 	if ( y_1 >= SSD1306_LCDHEIGHT) {
 		// draw second part of the rect in bottom LCD
-		lcd_bottom.fillRect(x, y - SSD1306_LCDHEIGHT, w, y_1 , color);
+		lcd_bottom.fillRect(x, y - SSD1306_LCDHEIGHT, w, h , color);
 	}
 }
 
