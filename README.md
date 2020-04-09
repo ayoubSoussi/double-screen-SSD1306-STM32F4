@@ -37,10 +37,14 @@ Double_screen mydoubleScreen;
 ```
 
 ## Demo
-
-1. Hardware : 
+The Demo folder containts a Keil µVision project and uses the double_screen library to draw shapes and bitmaps on the two LCD screens. 
+### 1. Hardware : 
   - two 128*32 SSD1306 LCD screens (I2C communication bus)
   - STM32F4 discovery board
-2. Circuit :
+### 2. Circuit :
 
-3. Results :
+![al](https://img.techpowerup.org/200409/double-lcd-circuit.jpg)
+
+### 3. Results :
+You can find the demo Youtube video here.
+
