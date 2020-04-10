@@ -1,10 +1,9 @@
 # double-screen-SSD1306-STM32F4
-This is a library to make 2 LCD screens 128*32 screens to work as one 128*64 screen
+This is a library to make 2 LCD screens 128\*32 screens to work as one 128\*64 screen
 
 ## Introduction
-You may have two 128*32 LCD screens and you want to transform them into one 128*64 screen, then this library is what you need.
-It's a library that implements all the Adafruit-SSD1306 library functions and adapt them to your needs. By using it, you can draw shapes,
-write words and draw Bitmap images.
+You may have two 128\*32 LCD screens and you want to transform them into one 128*64 screen, then this library is what you need.
+It's a library that implements all the Adafruit-SSD1306 library functions and adapt them to your needs. By using it, you can draw shapes, write words and draw Bitmap images.
 
 ## Functions
 This C++ library includes the following functions :
@@ -30,7 +29,7 @@ This C++ library includes the following functions :
 
 ## How to use
 After adding the Driver files in your projects, you only need to include the header file and create an object, then you are ready to go :
-```
+```c
 #include "Double_screen.h"
 
 Double_screen mydoubleScreen;
